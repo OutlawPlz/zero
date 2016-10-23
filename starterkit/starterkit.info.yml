@@ -1,0 +1,25 @@
+name: Starterkit
+description: 'Sub-theme of Zero.'
+
+core: 8.x
+version: 8.x-0.1
+type: theme
+base theme: zero
+
+regions:
+  leaderboard: Leaderboard
+  branding: Branding
+  navbar: Navbar
+  header: Header
+  breadcrumb: Breadcrumb
+  highlighted: Highlighted
+  features: Features
+  content_prefix: 'Content prefix'
+  content: Content
+  content_suffix: 'Content suffix'
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  subfeatures: Sub-features
+  footer_prefix: 'Footer prefix'
+  footer: Footer
+  footer_suffix: 'Footer suffix'

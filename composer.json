@@ -1,0 +1,14 @@
+{
+  "name": "outlawplz/zero",
+  "description": "A flexible base theme with many regions and a responsive, mobile-first layout. It uses Gulp.js, Singularity.gs, Breakpoint-sass and many other amazing tools.",
+  "type": "drupal-theme",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Matteo Palazzo",
+      "email": "outlaw.plz@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {}
+}
