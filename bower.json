@@ -1,12 +1,11 @@
 {
   "name": "zero",
+  "authors": [],
   "description": "",
   "main": "",
-  "authors": [
-    "OutlawPlz"
-  ],
   "license": "GPL-3.0",
   "homepage": "",
+  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
@@ -14,5 +13,7 @@
     "test",
     "tests"
   ],
-  "devDependencies": {}
+  "dependencies": {
+    "font-awesome": "^4.7.0"
+  }
 }

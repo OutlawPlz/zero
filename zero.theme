@@ -20,7 +20,7 @@ function zero_preprocess_html(&$variables) {
   $css_class = 'path';
 
   foreach ($exploded_path as $path) {
-    $css_class = $css_class . '-' . $path;
+    $css_class .= '-' . $path;
     $variables['attributes']['class'][] = $css_class;
   }
 }
