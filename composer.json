@@ -10,10 +10,5 @@
     }
   ],
   "minimum-stability": "dev",
-  "require": {},
-  "scripts": {
-    "post-install-cmd": [
-      "bower install"
-    ]
-  }
+  "require": {}
 }
