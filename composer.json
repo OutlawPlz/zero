@@ -10,5 +10,8 @@
     }
   ],
   "minimum-stability": "dev",
-  "require": {}
+  "require": {
+    "symfony/filesystem": "~2.8",
+    "symfony/finder": "~2.8"
+  }
 }

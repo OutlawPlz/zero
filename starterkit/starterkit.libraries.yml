@@ -1,0 +1,46 @@
+# Theme styles
+styles:
+  version: VERSION
+  css:
+    layout:
+      styles/css/layouts/layout.css: {}
+    components:
+      styles/css/components/components.css: {}
+
+# Font Awesome
+font-awesome:
+  remote: https://fortawesome.github.io/Font-Awesome/
+  version: VERSION
+  license:
+    name: MIT
+    url: https://fortawesome.github.io/Font-Awesome/license/
+    gpl-compatible: true
+  css:
+    theme:
+      vendor/font-awesome/css/font-awesome.min.css: { minified: true }
+
+# Droppy
+droppy:
+  remote: https://github.com/OutlawPlz/droppy
+  version: VERSION
+  license:
+    name: GPL-3.0
+    url: https://github.com/OutlawPlz/droppy/blob/master/LICENSE
+    gpl-compatible: true
+  css:
+    component:
+      vendor/droppy/dist/droppy.min.css: { minified: true }
+  js:
+    vendor/droppy/dist/droppy.min.js: { minified: true }
+
+# Open Sans
+open-sans:
+  remote: https://www.google.com/fonts/specimen/Open+Sans
+  version: VERSION
+  license:
+    name: Apache License v2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+    gpl-compatible: true
+  css:
+    theme:
+      https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,700,700italic: { type: external, minified: true }

@@ -39,7 +39,7 @@ function zero_preprocess_page(&$variables) {
   );
   $variables['row']['main']['attributes'] = new Attribute(
     array(
-      'class' => active_regions($regions)
+      'class' => active_regions_css_class($regions)
     )
   );
 
@@ -64,7 +64,7 @@ function zero_preprocess_page(&$variables) {
  * @param array $regions
  * @return array
  */
-function active_regions($regions) {
+function active_regions_css_class($regions) {
 
   $has_regions = 'has-regions-';
   $has_regions_counter = 0;

@@ -1,10 +1,10 @@
-name: STARTERKIT
-description: 'Sub-theme of Zero.'
+name: Starterkit
+description: 'Zero sub-theme.'
+type: theme
 
 core: 8.x
-version: 8.x-0.1
-type: theme
-base theme: zero
+version:
+'base theme': zero
 
 regions:
   leaderboard: Leaderboard
@@ -23,3 +23,10 @@ regions:
   footer_prefix: 'Footer prefix'
   footer: Footer
   footer_suffix: 'Footer suffix'
+
+libraries:
+  - starterkit/styles
+  - starterkit/open-sans
+  - starterkit/font-awesome
+
+hidden: true
