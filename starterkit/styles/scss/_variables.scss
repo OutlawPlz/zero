@@ -1,0 +1,63 @@
+
+// Fonts
+// -----------------------------------------------------------------------------
+
+$sans-serif: 'Open Sans', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+$serif: Garamond, Perpetua, 'Times New Roman', serif;
+$mono: Consolas, Monaco, 'Courier New', Courier, monospace;
+
+$font-size: 100%; // 16px
+// $font-size: 87.5%; // 14px
+$line-height: 1.5;
+
+
+// Colors
+// -----------------------------------------------------------------------------
+
+$page: #fff;
+$text: #333;
+$border: #ccc;
+
+$ultralight: #f4f5f6;
+$light: #eee;
+$medium_light: #ebebeb;
+$medium_dark: #e5e5e5;
+
+
+// Breakpoints / Media queries
+// -----------------------------------------------------------------------------
+//
+// Zero uses brekpoint-sass to manage breakpoints. All you have to do is define
+// a breakpoint as explained in breakpoint-sass documentation, then you're ready
+// to ready to use breakpoints in your .scss files.
+//
+// By default there are three breakpoint, one for targeted device. Breakpoints
+// with name ending in isolate are mutually exclusive so that only one of these
+// media queries can apply at a time.
+//
+// | $mobile-isolate --> |
+//                       | $tablet-isolate --> |
+//                                             | $wide -------------------> ...
+//
+// Every style not defined in a media query will be shared by all devices.
+//
+// Resources:
+// - https://github.com/at-import/breakpoint
+
+$mobile-isolate: max-width 560px;
+$tablet-isolate: 561px 850px;
+$wide: 851px;
+
+
+// Layout
+// -----------------------------------------------------------------------------
+
+$container: 1140px;
+$main-gutter: 7px; // Use $main-gutter or add-gutter-style('split') in Singularity.
+
+
+// Custom
+// -----------------------------------------------------------------------------
+
+$base-margin: 1.5em;
+$radius: 3px;

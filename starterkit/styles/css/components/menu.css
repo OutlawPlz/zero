@@ -1,0 +1,20 @@
+ul.menu {
+  margin: 0;
+}
+
+ul.menu::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ul.menu .menu-item {
+  padding: 0;
+  float: left;
+}
+
+ul.menu .menu-item a {
+  display: block;
+  padding: 5px 13px;
+  text-decoration: none;
+}

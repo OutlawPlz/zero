@@ -1,0 +1,194 @@
+@import "../mixins";
+
+
+// Elements
+// -----------------------------------------------------------------------------
+
+// Apply styles to an element using an element selector, a descendent selector,
+// or a child selector, along with any pseudo-classes. This file doesn’t include
+// any class or ID selectors. It is defining the default styling for how that
+// element should look in all occurrences on the page.
+
+html {
+  font-size: $font-size; // 16px
+  line-height: 1.5;
+  height: 100%;
+  background: $page;
+}
+
+
+body {
+  min-height: 100%;
+  font-family: $sans-serif;
+  color: $text;
+}
+
+
+h1 {
+  font-size: 3rem;
+  margin: 0 0 0.34em 0;
+  line-height: 1.3;
+}
+
+
+h2 {
+  font-size: 2rem;
+  margin: 0 0 0.5em 0;
+  line-height: 1.3;
+}
+
+
+h3 {
+  font-size: 1.286rem;
+  margin: 0 0 0.778em 0;
+}
+
+
+h4 {
+  font-size: 1rem;
+  margin: 0 0 1.33em 0;
+}
+
+
+h5 {
+  font-size: 0.83rem;
+  margin: 0 0 1.67em 0;
+}
+
+
+h6 {
+  font-size: 0.75rem;
+  margin: 0 0 2.33em 0;
+}
+
+
+p {
+  margin: 0 0 1.5em 0;
+}
+
+
+b,
+strong {}
+
+
+i,
+em {}
+
+
+sup {}
+
+
+sub {}
+
+
+del {}
+
+
+blockquote {}
+
+
+cite {}
+
+
+address {}
+
+
+ul {}
+
+
+ol {}
+
+
+li {}
+
+
+dl {}
+
+
+dd {}
+
+
+dt {}
+
+
+a {
+  &:hover,
+  &:focus {}
+
+  &:active {}
+
+  &:link,
+  &:visited {}
+}
+
+
+hr {}
+
+
+figure {
+  margin: 0;
+}
+
+
+figcaption {}
+
+
+img {
+  max-width: 100%;
+}
+
+
+form {}
+
+
+label {}
+
+
+fieldset {}
+
+
+legend {}
+
+
+button {
+  @include button;
+}
+
+
+input {
+  &[type="submit"] {}
+
+  &[type="number"],
+  &[type="search"],
+  &[type="text"] {
+    @include input-text;
+  }
+
+  &[type="checkbox"] {}
+
+  &[type="radio"] {}
+}
+
+
+select {
+  @extend input[type="text"];
+}
+
+textarea {
+  @extend input[type="text"];
+}
+
+
+table {}
+
+
+caption {}
+
+
+th {}
+
+
+tr {}
+
+
+td {}

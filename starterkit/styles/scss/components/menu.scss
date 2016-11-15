@@ -1,0 +1,35 @@
+@import "../mixins";
+
+
+// Menus
+// -----------------------------------------------------------------------------
+
+ul.menu {
+  @include clearfix;
+  margin: 0;
+
+  .menu-item {
+    padding: 0;
+    float: left;
+  }
+
+  .menu-item a {
+    display: block;
+    padding: 5px 13px; // @file _regions.scss .trigger-region-navbar {}
+    text-decoration: none;
+
+    &:hover,
+    &:focus {}
+
+    &:active {}
+  }
+}
+
+
+//  Main menu
+// -----------------------------------------------------------------------------
+
+.menu--main {
+
+  .menu-item:last-child a {}
+}

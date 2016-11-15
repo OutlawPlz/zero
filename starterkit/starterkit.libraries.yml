@@ -2,10 +2,12 @@
 styles:
   version: VERSION
   css:
+    base:
+      styles/css/base.css: {}
     layout:
-      styles/css/layouts/layout.css: {}
+      styles/css/layout.css: {}
     components:
-      styles/css/components/components.css: {}
+      styles/css/components.css: {}
 
 # Font Awesome
 font-awesome:
@@ -17,7 +19,7 @@ font-awesome:
     gpl-compatible: true
   css:
     theme:
-      vendor/font-awesome/css/font-awesome.min.css: { minified: true }
+      node_modules/font-awesome/css/font-awesome.min.css: { minified: true }
 
 # Droppy
 droppy:
@@ -29,13 +31,24 @@ droppy:
     gpl-compatible: true
   css:
     component:
-      vendor/droppy/dist/droppy.min.css: { minified: true }
+      node_modules/droppy/dist/droppy.min.css: { minified: true }
   js:
-    vendor/droppy/dist/droppy.min.js: { minified: true }
+    node_modules/droppy/dist/droppy.min.js: { minified: true }
+
+# Waypoints
+waypoints:
+  remote: https://github.com/imakewebthings/waypoints
+  version: VERSION
+  license:
+    name: MIT
+    url: https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
+    gpl-compatible: true
+  js:
+    node_modules/waypoints/lib/noframework.waypoints.min.js: { minified: true }
 
 # Open Sans
 open-sans:
-  remote: https://www.google.com/fonts/specimen/Open+Sans
+  remote: https://fonts.google.com/specimen/Open+Sans
   version: VERSION
   license:
     name: Apache License v2.0

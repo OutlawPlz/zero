@@ -1,0 +1,49 @@
+@import "config";
+
+
+//  Custom mixins
+// -----------------------------------------------------------------------------
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  clip: rect(1px,1px,1px,1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+@mixin input-text {
+  box-sizing: border-box;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 5px 7px;
+  max-width: 100%;
+  background-color: #fff;
+
+  &:focus {}
+}
+
+@mixin button {
+  box-sizing: border-box;
+  border: 1px solid $border;
+  border-radius: $radius;
+  max-width: 100%;
+  padding: 5px 15px;
+  background-color: $light;
+
+  &:hover,
+  &:focus {
+    background-color: $medium_dark;
+  }
+
+  &:active {}
+}

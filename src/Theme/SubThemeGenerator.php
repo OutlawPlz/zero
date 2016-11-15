@@ -16,7 +16,7 @@ use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\Yaml\Yaml;
 
 /**
- * Class SubThemeGenerator. Generate a sub-theme.
+ * Generate a sub-theme.
  *
  * @package Drupal\zero\Theme
  */

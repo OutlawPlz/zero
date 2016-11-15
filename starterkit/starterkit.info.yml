@@ -28,5 +28,5 @@ libraries:
   - starterkit/styles
   - starterkit/open-sans
   - starterkit/font-awesome
-
-hidden: true
+  - starterkit/droppy
+  - starterkit/waypoints

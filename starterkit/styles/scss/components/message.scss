@@ -1,0 +1,11 @@
+@import "../mixins";
+
+
+// Messages
+// -----------------------------------------------------------------------------
+
+.messages {
+  margin-bottom: $base-margin;
+
+  &--status {}
+}

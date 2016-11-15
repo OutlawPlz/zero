@@ -1,0 +1,24 @@
+@import "../mixins";
+
+
+// Forms
+// -----------------------------------------------------------------------------
+
+.form-textarea,
+.form-number,
+.form-text {
+  @include input-text;
+}
+
+.form-submit {
+  @include button;
+}
+
+.form-checkbox {
+  margin-right: 5px;
+}
+
+.form-actions {
+  @include clearfix;
+  margin: 0;
+}

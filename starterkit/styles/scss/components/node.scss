@@ -1,0 +1,18 @@
+@import "../mixins";
+
+
+// Nodes
+// -----------------------------------------------------------------------------
+
+.node {
+  margin-bottom: $base-margin;
+
+  &__title {}
+
+  &__content {}
+
+  &__submitted,
+  &__links {
+    margin-bottom: $base-margin;
+  }
+}

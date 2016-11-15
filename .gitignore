@@ -1,6 +1,3 @@
 .idea/
 
-/vendor/
-
 /starterkit/node_modules/
-/starterkit/vendor/

@@ -1,23 +1,37 @@
-var gulp = require( 'gulp' ),
+'use strict';
+
+var fs = require( 'fs' ),
+    path = require( 'path' ),
+    gulp = require( 'gulp' ),
     sass = require( 'gulp-sass' ),
+    concat = require( 'gulp-concat' ),
     autoprefixer = require( 'gulp-autoprefixer' ),
     watch = require( 'gulp-watch' );
-
-var breakpointsass = './node_modules/breakpoint-sass/stylesheets/',
-    singularitygs = './node_modules/singularitygs/stylesheets/';
 
 
 // Path
 // -----------------------------------------------------------------------------
 
-var path = {
+// Source path.
+var src = {
 
-  // Styles path.
-  styles: {
-    sass: [ './styles/scss/**/*.scss' ],
-    css: [ './styles/css/**/*.css' ],
-    output: './styles/css'
+  // Scss path.
+  scss: {
+    dir: './styles/scss',
+    glob: './styles/scss/**/*.scss'
+  },
+
+  // Css path.
+  css: {
+    dir: './styles/css',
+    glob: './styles/css/**/*.css'
   }
+};
+
+// Destination path.
+var dest = {
+
+  css: './styles/css'
 };
 
 
@@ -29,11 +43,7 @@ var options = {
   // SASS options.
   sass: {
     errLogToConsole: true,
-    outputStyle: 'expanded',
-    includePaths: [
-      breakpointsass,
-      singularitygs
-    ]
+    outputStyle: 'expanded'
   },
 
   // Autoprefixer options.
@@ -47,20 +57,36 @@ var options = {
 // -----------------------------------------------------------------------------
 
 // Compile SCSS.
-gulp.task( 'style', function () {
-  return gulp.src( path.styles.sass )
-    .pipe( sass( options.sass ) ).on( 'error', sass.logError() )
+gulp.task( 'sass', function () {
+  return gulp.src( src.scss.glob )
+    .pipe( sass( options.sass ) ).on( 'error', sass.logError )
     .pipe( autoprefixer( options.autoprefixer ) )
-    .pipe( gulp.dest( path.styles.output ) )
+    .pipe( gulp.dest( dest.css ) );
 } );
+
+// Concat CSS.
+gulp.task( 'css', function () {
+  var folders = fs.readdirSync( src.css.dir ).filter( function ( item ) {
+    return fs.statSync( path.join( src.css.dir, item ) ).isDirectory();
+  } );
+
+  return folders.map( function ( folder ) {
+    return gulp.src( path.join( src.css.dir, folder, '/*.css' ) )
+      .pipe( concat( folder + '.css' ) )
+      .pipe( gulp.dest( dest.css ) )
+  } );
+} );
+
+// Call to sass and css.
+gulp.task( 'styles', [ 'sass', 'css' ] );
 
 // Watch for changes.
 gulp.task( 'watch', function () {
-  return gulp.watch( path.styles.sass [ 'style' ] )
+  return gulp.watch( src.scss.glob, [ 'styles' ] )
     .on( 'change', function ( event ) {
       console.log( 'File ' + event.path + ' was ' + event.type + ', running tasks...' );
-    } )
+    } );
 } );
 
 // Default task.
-gulp.task( 'default', ['style'] );
+gulp.task( 'default', [ 'style' ] );

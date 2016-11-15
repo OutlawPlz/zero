@@ -1,0 +1,12 @@
+@import "../mixins";
+
+
+// Containers
+// -----------------------------------------------------------------------------
+
+.container {
+  max-width: $container;
+  margin: 0 auto;
+
+  // @include background-grid($color: #e6e6e6); // Show the grid.
+}

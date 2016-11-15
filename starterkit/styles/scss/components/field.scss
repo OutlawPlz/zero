@@ -1,0 +1,13 @@
+@import "../mixins";
+
+
+// Title field
+// -----------------------------------------------------------------------------
+
+.field--name-title {
+
+  // Edit
+  input {
+    display: block;
+  }
+}
