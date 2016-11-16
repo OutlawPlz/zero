@@ -1,8 +1,3 @@
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
 @media (max-width: 560px) {
   .region-navbar--inactive {
     position: absolute !important;
@@ -35,4 +30,3 @@
     word-wrap: normal;
   }
 }
-

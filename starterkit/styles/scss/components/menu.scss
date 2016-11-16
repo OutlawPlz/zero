@@ -15,7 +15,7 @@ ul.menu {
 
   .menu-item a {
     display: block;
-    padding: 5px 13px; // @file _regions.scss .trigger-region-navbar {}
+    padding: 5px 13px; // @see region.scss .trigger-region-navbar { padding }
     text-decoration: none;
 
     &:hover,
@@ -26,10 +26,23 @@ ul.menu {
 }
 
 
-//  Main menu
+// Main menu
 // -----------------------------------------------------------------------------
 
 .menu--main {
 
-  .menu-item:last-child a {}
+  .block__title {
+    @include visually-hidden();
+  }
+}
+
+
+// Account menu
+// -----------------------------------------------------------------------------
+
+.menu--account {
+
+  .block__title {
+    @include visually-hidden();
+  }
 }

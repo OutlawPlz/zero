@@ -29,4 +29,5 @@ libraries:
   - starterkit/open-sans
   - starterkit/font-awesome
   - starterkit/droppy
-  - starterkit/waypoints
+  # - starterkit/waypoints
+  # - starterkit/smooth-scroll

@@ -10,16 +10,7 @@
 // Navbar regions
 // -----------------------------------------------------------------------------
 
-.region-navbar {
-  .block{
-    &__title {
-      @include visually-hidden;
-    }
-  }
-}
-
 .trigger-region-navbar {
   cursor: pointer;
-  float: right;
-  padding: 5px 13px; // @file _menus.scss .menu-item a {}
+  padding: 5px 13px; // @see menu.scss .menu-item a { padding }
 }

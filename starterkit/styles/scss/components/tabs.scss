@@ -1,0 +1,36 @@
+@import "../mixins";
+
+
+// Primary tabs
+// -----------------------------------------------------------------------------
+
+ul.primary {
+  @include clearfix();
+  padding: 0 .3em;
+  margin-bottom: 0;
+  border-bottom: 1px solid $border;
+  display: flex;
+  overflow-x: auto;
+
+  li {
+    float: left; // IE9 - It does not support flexbox.
+  }
+
+  a {
+    border: 1px solid $border;
+    border-top-right-radius: $radius;
+    border-top-left-radius: $radius;
+    position: relative;
+    bottom: -1px; // Overlap bottom border.
+
+    &.is-active {
+      border-bottom-color: #fff;
+    }
+  }
+}
+
+
+// Secondary tabs
+// -----------------------------------------------------------------------------
+
+ul.secondary {}

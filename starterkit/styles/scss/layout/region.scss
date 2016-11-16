@@ -1,0 +1,36 @@
+@import "../mixins";
+
+
+// Regions
+// -----------------------------------------------------------------------------
+
+
+// Navbar regions
+// -----------------------------------------------------------------------------
+
+.region-navbar {
+
+  &--inactive {
+
+    // Mobile
+    @include breakpoint($mobile-isolate) {
+      @include visually-hidden();
+    }
+
+    // Tablet
+    @include breakpoint($tablet-isolate) {
+      @include visually-hidden();
+    }
+
+    // Desktop
+    // The navbar region is always visible on desktop.
+  }
+}
+
+.trigger-region-navbar {
+
+  // Desktop
+  @include breakpoint($wide) {
+    @include visually-hidden();
+  }
+}

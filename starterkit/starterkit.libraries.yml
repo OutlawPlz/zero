@@ -8,6 +8,8 @@ styles:
       styles/css/layout.css: {}
     components:
       styles/css/components.css: {}
+  js:
+    js/generic.js: {}
 
 # Font Awesome
 font-awesome:
@@ -45,6 +47,17 @@ waypoints:
     gpl-compatible: true
   js:
     node_modules/waypoints/lib/noframework.waypoints.min.js: { minified: true }
+
+# Smooth scroll
+smooth-scroll:
+  remote: https://github.com/cferdinandi/smooth-scroll
+  version: VERSION
+  license:
+    name: MIT
+    url: https://github.com/cferdinandi/smooth-scroll/blob/master/LICENSE.md
+    gpl-compatible: true
+  js:
+    node_modules/smooth-scroll/dist/smooth-scroll.min.js: { minified: true }
 
 # Open Sans
 open-sans:

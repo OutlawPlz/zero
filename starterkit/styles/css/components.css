@@ -63,6 +63,24 @@ ul.menu .menu-item a {
   text-decoration: none;
 }
 
+.menu--main .block__title {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+.menu--account .block__title {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
 .messages {
   margin-bottom: 1.5em;
 }
@@ -76,18 +94,39 @@ ul.menu .menu-item a {
 }
 
 
-.region-navbar .block__title {
-  position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  word-wrap: normal;
-}
-
 .trigger-region-navbar {
   cursor: pointer;
-  float: right;
   padding: 5px 13px;
 }
 
+
+ul.primary {
+  padding: 0 .3em;
+  margin-bottom: 0;
+  border-bottom: 1px solid #ccc;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: auto;
+}
+
+ul.primary::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+ul.primary li {
+  float: left;
+}
+
+ul.primary a {
+  border: 1px solid #ccc;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  position: relative;
+  bottom: -1px;
+}
+
+ul.primary a.is-active {
+  border-bottom-color: #fff;
+}

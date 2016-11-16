@@ -18,3 +18,21 @@ ul.menu .menu-item a {
   padding: 5px 13px;
   text-decoration: none;
 }
+
+.menu--main .block__title {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
+
+.menu--account .block__title {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  word-wrap: normal;
+}
