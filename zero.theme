@@ -23,6 +23,11 @@ function zero_preprocess_html(&$variables) {
     $css_class .= '-' . $path;
     $variables['attributes']['class'][] = $css_class;
   }
+
+  // If fixed_navigation add the relative library.
+  if (theme_get_setting('fixed_navbar')) {
+    $variables['#attached']['library'][] = 'zero/fixed-navbar';
+  }
 }
 
 /**
@@ -34,7 +39,7 @@ function zero_preprocess_page(&$variables) {
 
   $regions = array(
     'main',
-    'sidebar_firs',
+    'sidebar_first',
     'sidebar_second'
   );
   $variables['row']['main']['attributes'] = new Attribute(
@@ -51,6 +56,27 @@ function zero_preprocess_page(&$variables) {
       )
     )
   );
+}
+
+/**
+ * Preprocess variables for block templates.
+ *
+ * @param $variables
+ */
+function zero_preprocess_block(&$variables) {
+
+  if ($variables['plugin_id'] === 'system_branding_block') {
+
+    // Create an attribute object for site_name.
+    $variables['attributes_site_name'] = new Attribute(
+      array(
+        'class' => ['site-name']
+      )
+    );
+
+    // Add hide_site_name variable.
+    $variables['hide_site_name'] = theme_get_setting('hide_site_name');
+  }
 }
 
 /**

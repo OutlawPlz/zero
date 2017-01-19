@@ -1,12 +1,16 @@
 
-// Toggle Navbar
-// ---------------------------------------------------------------------------
+( function () {
 
-var navbar_trigger = document.querySelector( '.trigger-region-navbar' ),
-    navbar = document.querySelector( '.region-navbar' );
+  'use strict';
 
-navbar.classList.add( 'region-navbar--inactive' );
+  var element = document.querySelector( '.row-navbar' );
 
-navbar_trigger.addEventListener( 'click', function() {
-  navbar.classList.toggle( 'region-navbar--inactive' );
-} );
+  new Droppy( element, {
+    parentSelector: '.wrapper-navbar',
+    triggerSelector: '.trigger-navbar',
+    dropdownSelector: '.region-navbar',
+    animationIn: 'animation-in',
+    animationOut: 'animation-out'
+  } );
+
+} () );

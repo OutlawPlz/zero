@@ -23,3 +23,9 @@ regions:
   footer_prefix: 'Footer prefix'
   footer: Footer
   footer_suffix: 'Footer suffix'
+
+libraries-override:
+  classy/base:
+    css:
+      component:
+        css/components/button.css: false

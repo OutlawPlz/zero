@@ -1,0 +1,41 @@
+@import "../mixins";
+
+
+// Wrapper
+// -----------------------------------------------------------------------------
+
+.wrapper {}
+
+
+// Page wrapper
+// -----------------------------------------------------------------------------
+
+.wrapper-page {
+
+  // Sticky footer
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+
+// Navbar wrapper
+// -----------------------------------------------------------------------------
+
+.wrapper-navbar {
+
+  // Mobile
+  @include breakpoint($mobile-isolate) {
+    float: right;
+  }
+
+  // Tablet
+  @include breakpoint($tablet-isolate) {
+    float: right;
+  }
+
+  // Desktop
+  @include breakpoint($wide) {
+    @include grid-span(10,3);
+  }
+}

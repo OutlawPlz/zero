@@ -1,38 +1,264 @@
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
+@keyframes fake {
+  from {
+  }
+  to {
+  }
 }
 
-@media (max-width: 560px) {
-  .region-navbar--inactive {
-    position: absolute !important;
-    clip: rect(1px, 1px, 1px, 1px);
-    overflow: hidden;
-    height: 1px;
-    width: 1px;
-    word-wrap: normal;
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 0) and (max-width: 560px) {
+  .region-navbar {
+    position: fixed;
+    left: 0;
+    top: 39px;
+    width: 80vw;
+    height: 100vh;
+    overflow-y: auto;
   }
 }
 
 @media (min-width: 561px) and (max-width: 850px) {
-  .region-navbar--inactive {
-    position: absolute !important;
-    clip: rect(1px, 1px, 1px, 1px);
-    overflow: hidden;
-    height: 1px;
-    width: 1px;
-    word-wrap: normal;
+  .region-navbar {
+    position: absolute;
+    right: 0;
   }
 }
 
 @media (min-width: 851px) {
-  .trigger-region-navbar {
-    position: absolute !important;
-    clip: rect(1px, 1px, 1px, 1px);
-    overflow: hidden;
-    height: 1px;
-    width: 1px;
-    word-wrap: normal;
+  .trigger-navbar {
+    display: none;
   }
 }
 
+.region-branding {
+  width: 46.66667%;
+  float: left;
+  margin-right: -100%;
+  margin-left: 0;
+  clear: none;
+}
+
+@media (min-width: 561px) and (max-width: 850px) {
+  .region-branding {
+    width: 22.58065%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+  }
+}
+
+@media (min-width: 851px) {
+  .region-branding {
+    width: 14.89362%;
+    float: left;
+    margin-right: -100%;
+    margin-left: 0;
+    clear: none;
+  }
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.row-main {
+  -ms-flex: 1 0 auto;
+      flex: 1 0 auto;
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.wrapper-page {
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -ms-flex-direction: column;
+      flex-direction: column;
+}
+
+@media (min-width: 0) and (max-width: 560px) {
+  .wrapper-navbar {
+    float: right;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 850px) {
+  .wrapper-navbar {
+    float: right;
+  }
+}
+
+@media (min-width: 851px) {
+  .wrapper-navbar {
+    width: 82.97872%;
+    float: right;
+    margin-left: 0;
+    margin-right: 0;
+    clear: none;
+  }
+}

@@ -65,7 +65,8 @@ gulp.task( 'sass', function () {
 } );
 
 // Concat CSS.
-gulp.task( 'css', function () {
+gulp.task( 'css', [ 'sass' ], function () {
+
   var folders = fs.readdirSync( src.css.dir ).filter( function ( item ) {
     return fs.statSync( path.join( src.css.dir, item ) ).isDirectory();
   } );
@@ -78,7 +79,7 @@ gulp.task( 'css', function () {
 } );
 
 // Call to sass and css.
-gulp.task( 'styles', [ 'sass', 'css' ] );
+gulp.task( 'style', [ 'css' ] );
 
 // Watch for changes.
 gulp.task( 'watch', function () {

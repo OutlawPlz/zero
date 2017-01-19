@@ -1,0 +1,24 @@
+@import "../mixins";
+
+
+// Toolbar improvements
+// -----------------------------------------------------------------------------
+
+#toolbar-administration {
+  position: fixed; // Fixed. Always.
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+body.toolbar-fixed {
+
+  &.toolbar-tray-open {
+
+    &.toolbar-vertical {
+
+      // Do not slide content.
+      margin-left: 0;
+    }
+  }
+}

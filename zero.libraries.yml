@@ -1,0 +1,8 @@
+# Fixed navigation
+fixed-navbar:
+  version: 1.0.0
+  css:
+    components:
+      styles/css/components/fixed-navbar.css: {}
+  js:
+    js/fixed-navbar.js: {}

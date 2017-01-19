@@ -1,0 +1,28 @@
+
+// Fixed navbar
+// -----------------------------------------------------------------------------
+
+.row-navbar--fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+// Manage Drupal admin toolbar.
+body.toolbar-fixed {
+
+  .row-navbar--fixed {
+    top: 39px;
+  }
+
+  &.toolbar-tray-open {
+
+    &.toolbar-horizontal {
+
+      .row-navbar--fixed {
+        top: 79px;
+      }
+    }
+  }
+}

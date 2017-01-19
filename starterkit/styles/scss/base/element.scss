@@ -155,13 +155,26 @@ button {
 }
 
 
+select {
+  display: block;
+  box-sizing: border-box;
+  border: 1px solid $border;
+  border-radius: $radius;
+  padding: 5px 7px;
+  width: 100%;
+  max-width: 200px;
+  background-color: #fff;
+}
+
 input {
+
   &[type="submit"] {}
 
   &[type="number"],
   &[type="search"],
   &[type="text"] {
-    @include input-text;
+    @extend select;
+    max-width: 400px;
   }
 
   &[type="checkbox"] {}
@@ -170,12 +183,9 @@ input {
 }
 
 
-select {
-  @extend input[type="text"];
-}
-
 textarea {
-  @extend input[type="text"];
+  @extend select;
+  max-width: 750px;
 }
 
 

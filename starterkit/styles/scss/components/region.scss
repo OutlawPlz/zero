@@ -10,7 +10,57 @@
 // Navbar regions
 // -----------------------------------------------------------------------------
 
-.trigger-region-navbar {
-  cursor: pointer;
-  padding: 5px 13px; // @see menu.scss .menu-item a { padding }
+.region-navbar {
+
+  // Mobile
+  @include breakpoint($mobile-isolate) {
+    position: fixed;
+    left: 0;
+    // top: 0;
+    width: 80vw;
+    height: 100vh;
+    overflow-y: auto;
+
+    // Animation
+    &.animation-in {
+      animation-name: slideInLeft;
+      animation-duration: .3s;
+    }
+
+    &.animation-out {
+      animation-name: slideOutLeft;
+      animation-duration: .3s;
+    }
+  }
+
+  // Tablet
+  @include breakpoint($tablet-isolate) {
+
+    // Animation
+    &.animation-in {
+      animation-name: fadeIn;
+      animation-duration: .3s;
+    }
+
+    &.animation-out {
+      animation-name: fadeOut;
+      animation-duration: .3s;
+    }
+  }
+
+  // Desktop
+  @include breakpoint($wide) {}
+}
+
+.trigger-navbar {
+  border: none;
+  padding: 0 15px;
+  line-height: $navbar-height;
+  border-radius: 0;
+  background-color: transparent;
+
+  &:hover,
+  &:focus {}
+
+  &:active {}
 }

@@ -6,7 +6,10 @@
 
 .container {
   max-width: $container;
-  margin: 0 auto;
+  // padding-right: $main-gutter;
+  // padding-left: $main-gutter;
+  margin-left: auto;
+  margin-right: auto;
 
   // @include background-grid($color: #e6e6e6); // Show the grid.
 }

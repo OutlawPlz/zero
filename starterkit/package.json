@@ -18,10 +18,7 @@
     "singularitygs": "^1.7.0"
   },
   "dependencies": {
-    "droppy-menu": "^1.0.3",
     "font-awesome": "^4.7.0",
-    "install": "^0.8.2",
-    "npm": "^3.10.9",
     "smooth-scroll": "github:cferdinandi/smooth-scroll",
     "waypoints": "^4.0.1"
   }

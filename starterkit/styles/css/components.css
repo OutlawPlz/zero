@@ -1,45 +1,369 @@
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
 
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.block-system-branding-block .site-logo img {
+  height: 3em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  vertical-align: middle;
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+li.droppy__parent {
+  position: relative;
+}
+
+@media (min-width: 561px) and (max-width: 850px) {
+  ul.droppy__drop--active {
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0 3px 7px rgba(51, 51, 51, 0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@media (min-width: 851px) {
+  ul.droppy__drop--active {
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0 3px 7px rgba(51, 51, 51, 0.3);
+  }
+}
+
+@media (min-width: 851px) {
+  ul.droppy__drop--active ul.droppy__drop--active {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+}
+
+@media (min-width: 851px) {
+  .region-navbar.droppy__drop {
+    display: block !important;
+  }
+}
+
+@media (min-width: 0) and (max-width: 560px) {
+  .region-navbar.droppy__drop--active {
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0 3px 7px rgba(51, 51, 51, 0.3);
+  }
+}
+
+@media (min-width: 561px) and (max-width: 850px) {
+  .region-navbar.droppy__drop--active {
+    z-index: 1;
+    background-color: #fff;
+    box-shadow: 0 3px 7px rgba(51, 51, 51, 0.3);
+  }
+}
+
+.wrapper-navbar.droppy__parent {
+  position: relative;
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
 
 .field--name-title input {
   display: block;
 }
 
-.form-textarea,
-.form-number,
-.form-text {
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 5px 7px;
-  max-width: 100%;
-  background-color: #fff;
+@keyframes fake {
+  from {
+  }
+  to {
+  }
 }
 
-.form-submit {
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  max-width: 100%;
-  padding: 5px 15px;
-  background-color: #eee;
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.form-submit:hover, .form-submit:focus {
-  background-color: #e5e5e5;
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .form-checkbox {
-  margin-right: 5px;
+  margin-right: 7px;
 }
 
-.form-actions {
-  margin: 0;
+.button,
+.image-button {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 5px 15px;
+  background-color: #eee;
+  margin-left: .7em;
+  margin-right: .7em;
 }
 
-.form-actions::after {
-  content: "";
-  display: table;
-  clear: both;
+.button:first-of-type,
+.image-button:first-of-type {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.button:hover, .button:focus,
+.image-button:hover,
+.image-button:focus {
+  background-color: #e5e5e5;
+}
+
+.button:first-of-type,
+.image-button:first-of-type {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.fieldset-legend {
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 ul.menu {
@@ -54,35 +378,155 @@ ul.menu::after {
 
 ul.menu .menu-item {
   padding: 0;
-  float: left;
+}
+
+ul.menu .menu-item--expanded {
+  list-style: none;
 }
 
 ul.menu .menu-item a {
   display: block;
-  padding: 5px 13px;
+  padding-left: 13px;
+  padding-right: 13px;
+  line-height: 2.5em;
   text-decoration: none;
+  white-space: nowrap;
 }
 
-.menu--main .block__title {
-  position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  word-wrap: normal;
+@media (min-width: 0) and (max-width: 560px) {
+  ul.menu ul.menu {
+    margin-left: 1em;
+  }
 }
 
-.menu--account .block__title {
-  position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  word-wrap: normal;
+ul.menu.animation-in {
+  animation-name: fadeIn;
+  animation-duration: .3s;
+}
+
+ul.menu.animation-out {
+  animation-name: fadeOut;
+  animation-duration: .3s;
+}
+
+@media (min-width: 851px) {
+  .menu--main {
+    float: left;
+  }
+}
+
+@media (min-width: 851px) {
+  .menu--main > ul.menu > .menu-item {
+    float: left;
+  }
+  .menu--main > ul.menu > .menu-item > a {
+    line-height: 4em;
+  }
+}
+
+@media (min-width: 851px) {
+  .menu--account {
+    float: right;
+  }
+}
+
+@media (min-width: 851px) {
+  .menu--account > ul.menu > .menu-item {
+    float: left;
+  }
+  .menu--account > ul.menu > .menu-item > a {
+    line-height: 4em;
+  }
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .messages {
   margin-bottom: 1.5em;
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .node {
@@ -93,12 +537,231 @@ ul.menu .menu-item a {
   margin-bottom: 1.5em;
 }
 
-
-.trigger-region-navbar {
-  cursor: pointer;
-  padding: 5px 13px;
+@keyframes fake {
+  from {
+  }
+  to {
+  }
 }
 
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 0) and (max-width: 560px) {
+  .region-navbar {
+    position: fixed;
+    left: 0;
+    width: 80vw;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .region-navbar.animation-in {
+    animation-name: slideInLeft;
+    animation-duration: .3s;
+  }
+  .region-navbar.animation-out {
+    animation-name: slideOutLeft;
+    animation-duration: .3s;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 850px) {
+  .region-navbar.animation-in {
+    animation-name: fadeIn;
+    animation-duration: .3s;
+  }
+  .region-navbar.animation-out {
+    animation-name: fadeOut;
+    animation-duration: .3s;
+  }
+}
+
+.trigger-navbar {
+  border: none;
+  padding: 0 15px;
+  line-height: 4em;
+  border-radius: 0;
+  background-color: transparent;
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.row {
+  margin-bottom: 1em;
+}
+
+.row-navbar {
+  border-bottom: 1px solid #ccc;
+  background-color: #f4f5f6;
+}
+
+.row-highlighted {
+  margin-bottom: 0;
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.tabs {
+  margin-bottom: 1em;
+}
 
 ul.primary {
   padding: 0 .3em;
@@ -117,6 +780,7 @@ ul.primary::after {
 
 ul.primary li {
   float: left;
+  white-space: nowrap;
 }
 
 ul.primary a {
@@ -129,4 +793,107 @@ ul.primary a {
 
 ul.primary a.is-active {
   border-bottom-color: #fff;
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#toolbar-administration {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+body.toolbar-fixed.toolbar-tray-open.toolbar-vertical {
+  margin-left: 0;
+}
+
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.wrapper-footer {
+  background-color: #f4f5f6;
+  border-top: 1px solid #ccc;
+  padding-top: 1em;
 }

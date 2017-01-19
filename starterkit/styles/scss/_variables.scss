@@ -44,7 +44,7 @@ $medium_dark: #e5e5e5;
 // Resources:
 // - https://github.com/at-import/breakpoint
 
-$mobile-isolate: max-width 560px;
+$mobile-isolate: 0 560px;
 $tablet-isolate: 561px 850px;
 $wide: 851px;
 
@@ -54,6 +54,12 @@ $wide: 851px;
 
 $container: 1140px;
 $main-gutter: 7px; // Use $main-gutter or add-gutter-style('split') in Singularity.
+// Space between rows, apply it only on row selector, margin-bottom. If you
+// need to add space on top use the wrapper selector, padding-top.
+$row-space: 1em;
+$navbar-height: 4em; // Use this on line-height of navbar links.
+$toolbar-height: 39px;
+$toolbar-tray-height: 79px;
 
 
 // Custom

@@ -4,33 +4,53 @@
 // Regions
 // -----------------------------------------------------------------------------
 
+.region {}
+
 
 // Navbar regions
 // -----------------------------------------------------------------------------
 
 .region-navbar {
 
-  &--inactive {
+  // Mobile
+  @include breakpoint($mobile-isolate) {
+    position: fixed;
+    left: 0;
+    top: $toolbar-height;
+    width: 80vw;
+    height: 100vh;
+    overflow-y: auto;
+  }
 
-    // Mobile
-    @include breakpoint($mobile-isolate) {
-      @include visually-hidden();
-    }
-
-    // Tablet
-    @include breakpoint($tablet-isolate) {
-      @include visually-hidden();
-    }
-
-    // Desktop
-    // The navbar region is always visible on desktop.
+  @include breakpoint($tablet-isolate) {
+    position: absolute;
+    right: 0;
   }
 }
 
-.trigger-region-navbar {
+.trigger-navbar {
 
   // Desktop
   @include breakpoint($wide) {
-    @include visually-hidden();
+    display: none;
+  }
+}
+
+
+// Branding regions
+// -----------------------------------------------------------------------------
+
+.region-branding {
+
+  @include grid-span(2,1);
+
+  // Tablet
+  @include breakpoint($tablet-isolate) {
+    @include grid-span(2,1);
+  }
+
+  // Desktop
+  @include breakpoint($wide) {
+    @include grid-span(2,1);
   }
 }

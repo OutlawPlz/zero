@@ -4,21 +4,34 @@
 // Forms
 // -----------------------------------------------------------------------------
 
-.form-textarea,
-.form-number,
-.form-text {
-  @include input-text;
-}
 
-.form-submit {
-  @include button;
-}
+// --- Inputs ---
 
 .form-checkbox {
-  margin-right: 5px;
+  margin-right: 7px;
 }
 
-.form-actions {
-  @include clearfix;
-  margin: 0;
+
+// --- Buttons ---
+
+.button,
+.image-button {
+  @include button();
+
+  &:first-of-type {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
+
+
+// --- Fieldsets ---
+
+.fieldset-legend {
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+.fieldset-wrapper {}
+
+.fieldset-description {}

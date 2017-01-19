@@ -3,3 +3,24 @@
 
 // Rows
 // -----------------------------------------------------------------------------
+
+.row {
+  margin-bottom: $row-space;
+}
+
+
+// Navbar row
+// -----------------------------------------------------------------------------
+
+.row-navbar {
+  border-bottom: 1px solid $border;
+  background-color: $ultralight;
+}
+
+
+// Navbar row
+// -----------------------------------------------------------------------------
+
+.row-highlighted {
+  margin-bottom: 0; // This is always printed, so remove the margin-bottom.
+}

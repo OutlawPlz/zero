@@ -23,20 +23,6 @@ font-awesome:
     theme:
       node_modules/font-awesome/css/font-awesome.min.css: { minified: true }
 
-# Droppy
-droppy:
-  remote: https://github.com/OutlawPlz/droppy
-  version: VERSION
-  license:
-    name: GPL-3.0
-    url: https://github.com/OutlawPlz/droppy/blob/master/LICENSE
-    gpl-compatible: true
-  css:
-    component:
-      node_modules/droppy/dist/droppy.min.css: { minified: true }
-  js:
-    node_modules/droppy/dist/droppy.min.js: { minified: true }
-
 # Waypoints
 waypoints:
   remote: https://github.com/imakewebthings/waypoints

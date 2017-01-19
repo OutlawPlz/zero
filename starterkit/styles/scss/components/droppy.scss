@@ -1,0 +1,89 @@
+@import "../mixins";
+
+
+// Droppy - Generic menu
+// -----------------------------------------------------------------------------
+
+ul.droppy {}
+
+li.droppy__parent {
+  position: relative;
+}
+
+ul.droppy__drop {
+
+}
+
+ul.droppy__drop--active {
+
+  // Mobile
+  @include breakpoint($mobile-isolate) {}
+
+  // Tablet
+  @include breakpoint($tablet-isolate) {
+    position: absolute;
+    z-index: 1;
+    background-color: $page;
+    box-shadow: 0 3px 7px rgba(51,51,51,.3);
+    @include grow-left();
+  }
+
+  // Desktop
+  @include breakpoint($wide) {
+    position: absolute;
+    z-index: 1;
+    background-color: $page;
+    box-shadow: 0 3px 7px rgba(51,51,51,.3);
+  }
+
+  // Levels greater than 1.
+  ul.droppy__drop--active {
+
+    // Mobile
+    @include breakpoint($mobile-isolate) {}
+
+    // Tablet
+    @include breakpoint($tablet-isolate) {}
+
+    // Desktop
+    @include breakpoint($wide) {
+      @include grow-right();
+    }
+  }
+}
+
+
+// Droppy - Region navbar
+// -----------------------------------------------------------------------------
+
+.region-navbar.droppy__drop {
+
+  // Desktop
+  @include breakpoint($wide) {
+    display: block !important;
+  }
+}
+
+.region-navbar.droppy__drop--active {
+
+  // Mobile
+  @include breakpoint($mobile-isolate) {
+    z-index: 1;
+    background-color: $page;
+    box-shadow: 0 3px 7px rgba(51,51,51,.3);
+  }
+
+  // Tablet
+  @include breakpoint($tablet-isolate) {
+    z-index: 1;
+    background-color: $page;
+    box-shadow: 0 3px 7px rgba(51,51,51,.3);
+  }
+
+  // Desktop
+  @include breakpoint($wide) {}
+}
+
+.wrapper-navbar.droppy__parent {
+  position: relative;
+}

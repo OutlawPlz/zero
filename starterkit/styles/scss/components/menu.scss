@@ -1,7 +1,7 @@
 @import "../mixins";
 
 
-// Menus
+// Menu
 // -----------------------------------------------------------------------------
 
 ul.menu {
@@ -10,18 +10,44 @@ ul.menu {
 
   .menu-item {
     padding: 0;
-    float: left;
+
+    &--expanded {
+      list-style: none;
+    }
   }
 
   .menu-item a {
     display: block;
-    padding: 5px 13px; // @see region.scss .trigger-region-navbar { padding }
+    padding-left: 13px;
+    padding-right: 13px;
+    line-height: 2.5em;
     text-decoration: none;
+    white-space: nowrap;
 
     &:hover,
     &:focus {}
 
     &:active {}
+  }
+
+  // Levels greater than 1
+  ul.menu {
+
+    // Mobile
+    @include breakpoint($mobile-isolate) {
+      margin-left: 1em;
+    }
+  }
+
+  // Animation
+  &.animation-in {
+    animation-name: fadeIn;
+    animation-duration: .3s;
+  }
+
+  &.animation-out {
+    animation-name: fadeOut;
+    animation-duration: .3s;
   }
 }
 
@@ -31,8 +57,21 @@ ul.menu {
 
 .menu--main {
 
-  .block__title {
-    @include visually-hidden();
+  @include breakpoint($wide) {
+    float: left;
+  }
+
+  .block__title {}
+
+  // On desktop, set the height of the navbar on the first level of menu links.
+  @include breakpoint($wide) {
+    > ul.menu > .menu-item {
+      float: left;
+
+      > a {
+        line-height: $navbar-height;
+      }
+    }
   }
 }
 
@@ -42,7 +81,20 @@ ul.menu {
 
 .menu--account {
 
-  .block__title {
-    @include visually-hidden();
+  @include breakpoint($wide) {
+    float: right;
+  }
+
+  .block__title {}
+
+  // On desktop, set the height of the navbar on the first level of menu links.
+  @include breakpoint($wide) {
+    > ul.menu > .menu-item {
+      float: left;
+
+      > a {
+        line-height: $navbar-height;
+      }
+    }
   }
 }

@@ -1,6 +1,13 @@
 @import "../mixins";
 
 
+// Tabs
+// -----------------------------------------------------------------------------
+
+.tabs {
+  margin-bottom: 1em;
+}
+
 // Primary tabs
 // -----------------------------------------------------------------------------
 
@@ -14,6 +21,7 @@ ul.primary {
 
   li {
     float: left; // IE9 - It does not support flexbox.
+    white-space: nowrap;
   }
 
   a {

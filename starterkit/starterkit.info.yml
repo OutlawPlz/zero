@@ -25,9 +25,9 @@ regions:
   footer_suffix: 'Footer suffix'
 
 libraries:
-  - starterkit/styles
+  - droppy/droppy
   - starterkit/open-sans
   - starterkit/font-awesome
-  - starterkit/droppy
+  - starterkit/styles
   # - starterkit/waypoints
   # - starterkit/smooth-scroll

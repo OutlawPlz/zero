@@ -1,37 +1,80 @@
-.form-textarea,
-.form-number,
-.form-text {
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 5px 7px;
-  max-width: 100%;
-  background-color: #fff;
+@keyframes fake {
+  from {
+  }
+  to {
+  }
 }
 
-.form-submit {
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  max-width: 100%;
-  padding: 5px 15px;
-  background-color: #eee;
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.form-submit:hover, .form-submit:focus {
-  background-color: #e5e5e5;
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .form-checkbox {
-  margin-right: 5px;
+  margin-right: 7px;
 }
 
-.form-actions {
-  margin: 0;
+.button,
+.image-button {
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 5px 15px;
+  background-color: #eee;
+  margin-left: .7em;
+  margin-right: .7em;
 }
 
-.form-actions::after {
-  content: "";
-  display: table;
-  clear: both;
+.button:first-of-type,
+.image-button:first-of-type {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.button:hover, .button:focus,
+.image-button:hover,
+.image-button:focus {
+  background-color: #e5e5e5;
+}
+
+.button:first-of-type,
+.image-button:first-of-type {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.fieldset-legend {
+  margin-left: 7px;
+  margin-right: 7px;
 }

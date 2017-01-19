@@ -1,0 +1,17 @@
+@import "../mixins";
+
+
+// Wrapper
+// -----------------------------------------------------------------------------
+
+.wrapper {}
+
+
+// Footer wrapper
+// -----------------------------------------------------------------------------
+
+.wrapper-footer {
+  background-color: $ultralight;
+  border-top: 1px solid $border;
+  padding-top: $row-space;
+}

@@ -1,4 +1,79 @@
-.trigger-region-navbar {
-  cursor: pointer;
-  padding: 5px 13px;
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@media (min-width: 0) and (max-width: 560px) {
+  .region-navbar {
+    position: fixed;
+    left: 0;
+    width: 80vw;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .region-navbar.animation-in {
+    animation-name: slideInLeft;
+    animation-duration: .3s;
+  }
+  .region-navbar.animation-out {
+    animation-name: slideOutLeft;
+    animation-duration: .3s;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 850px) {
+  .region-navbar.animation-in {
+    animation-name: fadeIn;
+    animation-duration: .3s;
+  }
+  .region-navbar.animation-out {
+    animation-name: fadeOut;
+    animation-duration: .3s;
+  }
+}
+
+.trigger-navbar {
+  border: none;
+  padding: 0 15px;
+  line-height: 4em;
+  border-radius: 0;
+  background-color: transparent;
 }

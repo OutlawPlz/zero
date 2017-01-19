@@ -68,10 +68,12 @@
     <div class="row row-navbar">
       <div{{ container.attributes }}>
         {{ page.branding }}
-        <div class="trigger trigger-region-navbar">
-          <span class="fa fa-bars trigger__icon"></span><span class="trigger__label"> Menu</span>
+        <div class="wrapper wrapper-navbar">
+          <button class="trigger trigger-navbar">
+            <span class="fa fa-bars trigger__icon"></span><span class="trigger__label"> Menu</span>
+          </button>
+          {{ page.navbar }}
         </div>
-        {{ page.navbar }}
       </div>
     </div>
     {% if page.header %}

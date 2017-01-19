@@ -72,6 +72,27 @@ function zero_form_system_theme_settings_alter(array &$form, FormStateInterface 
     )
   );
 
+  $form['navbar'] = array(
+    '#type' => 'details',
+    '#title' => t('Navbar'),
+    '#weight' => -1,
+    '#open' => TRUE
+  );
+
+  $form['navbar']['hide_site_name'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Hide site name'),
+    '#description' => t('The site name is hidden from visualization.'),
+    '#default_value' => theme_get_setting('hide_site_name')
+  );
+
+  $form['navbar']['fixed_navbar'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Fixed navbar'),
+    '#description' => t('The navbar is fixed on top of the page.'),
+    '#default_value' => theme_get_setting('fixed_navbar')
+  );
+
   $form['#submit'][] = 'zero_form_submit';
 }
 

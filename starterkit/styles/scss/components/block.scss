@@ -8,3 +8,17 @@
 
   &__title {}
 }
+
+
+// Blocks
+// -----------------------------------------------------------------------------
+
+.block-system-branding-block {
+
+  .site-logo img {
+    height: $navbar-height - 1em;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    vertical-align: middle;
+  }
+}
