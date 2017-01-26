@@ -79,13 +79,18 @@ function zero_preprocess_block(&$variables) {
   }
 }
 
+
+// Helper functions
+// -----------------------------------------------------------------------------
+
 /**
  * Gets an array of region keys, check if those regions are active and returns
- * an array of CSS class that lists which regions are active. E.g. in the
- * .row-main there are main, sidebar_first and sidebar_second regions. If all
- * regions are active the function will return .has-regions--1-2-3 and
- * .active-regions--3. If only main and sidebar_second are active the function
- * will return .has-regions--1-3 and .active-regions--2.
+ * an array of CSS class that lists which regions are active.
+ *
+ * E.g. in the .row-main there are main, sidebar_first and sidebar_second
+ * regions. If all regions are active the function will return
+ * .has-regions--1-2-3 and .active-regions--3. If only main and sidebar_second
+ * are active the function will return .has-regions--1-3 and .active-regions--2.
  *
  * @param array $regions
  * @return array
