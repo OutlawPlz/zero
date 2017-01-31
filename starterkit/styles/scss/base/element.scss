@@ -172,6 +172,7 @@ input {
 
   &[type="number"],
   &[type="search"],
+  &[type="password"],
   &[type="text"] {
     @extend select;
     max-width: 400px;

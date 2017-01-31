@@ -1,3 +1,5 @@
-
 fixed_navbar: false
-hide_site_name: true
+mobile_toggle_label: 'Menu'
+mobile_toggle_svg: ''
+mobile_toggle_icon_id: ''
+mobile_toggle_icon_only: false

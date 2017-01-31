@@ -391,6 +391,7 @@ ul.menu .menu-item a {
   line-height: 2.5em;
   text-decoration: none;
   white-space: nowrap;
+  box-sizing: border-box;
 }
 
 @media (min-width: 0) and (max-width: 560px) {
@@ -658,6 +659,11 @@ ul.menu.animation-out {
   line-height: 4em;
   border-radius: 0;
   background-color: transparent;
+}
+
+.trigger__icon.svg-icon--only {
+  width: 1.5em;
+  height: 1.5em;
 }
 
 @keyframes fake {

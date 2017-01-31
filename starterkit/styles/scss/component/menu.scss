@@ -23,6 +23,7 @@ ul.menu {
     line-height: 2.5em;
     text-decoration: none;
     white-space: nowrap;
+    box-sizing: border-box;
 
     &:hover,
     &:focus {}

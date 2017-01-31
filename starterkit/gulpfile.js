@@ -83,7 +83,7 @@ gulp.task( 'style', [ 'css' ] );
 
 // Watch for changes.
 gulp.task( 'watch', function () {
-  return gulp.watch( src.scss.glob, [ 'styles' ] )
+  return gulp.watch( src.scss.glob, [ 'style' ] )
     .on( 'change', function ( event ) {
       console.log( 'File ' + event.path + ' was ' + event.type + ', running tasks...' );
     } );

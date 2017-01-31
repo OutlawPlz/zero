@@ -2,7 +2,7 @@
 fixed-navbar:
   version: 1.0.0
   css:
-    components:
+    component:
       styles/css/components/fixed-navbar.css: {}
   js:
     js/fixed-navbar.js: {}

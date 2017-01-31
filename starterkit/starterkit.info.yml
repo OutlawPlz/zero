@@ -27,7 +27,6 @@ regions:
 libraries:
   - droppy/droppy
   - starterkit/open-sans
-  - starterkit/font-awesome
   - starterkit/styles
   # - starterkit/waypoints
   # - starterkit/smooth-scroll

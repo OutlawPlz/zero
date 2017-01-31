@@ -77,3 +77,8 @@
   border-radius: 0;
   background-color: transparent;
 }
+
+.trigger__icon.svg-icon--only {
+  width: 1.5em;
+  height: 1.5em;
+}

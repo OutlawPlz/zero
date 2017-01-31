@@ -70,7 +70,12 @@
         {{ page.branding }}
         <div class="wrapper wrapper-navbar">
           <button class="trigger trigger-navbar">
-            <span class="fa fa-bars trigger__icon"></span><span class="trigger__label"> Menu</span>
+            {% if trigger.icon %}
+            <svg{{ trigger.icon_attributes }}>
+              <use xlink:href="{{ trigger.icon_svg }}#{{ trigger.icon_id }}"/>
+            </svg>
+            {% endif %}
+            <span{{ trigger.label_attributes }}>{{ trigger.label }}</span>
           </button>
           {{ page.navbar }}
         </div>

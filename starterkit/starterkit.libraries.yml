@@ -6,22 +6,10 @@ styles:
       styles/css/base.css: {}
     layout:
       styles/css/layout.css: {}
-    components:
-      styles/css/components.css: {}
+    component:
+      styles/css/component.css: {}
   js:
     js/generic.js: {}
-
-# Font Awesome
-font-awesome:
-  remote: https://fortawesome.github.io/Font-Awesome/
-  version: VERSION
-  license:
-    name: MIT
-    url: https://fortawesome.github.io/Font-Awesome/license/
-    gpl-compatible: true
-  css:
-    theme:
-      node_modules/font-awesome/css/font-awesome.min.css: { minified: true }
 
 # Waypoints
 waypoints:
