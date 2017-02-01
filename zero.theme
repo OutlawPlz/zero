@@ -88,7 +88,7 @@ function zero_preprocess_page(&$variables) {
     'svg-icon--' . $mobile_toggle_icon_id
   );
 
-  if (theme_get_setting('mobile_toggle_icon_only')) {
+  if (theme_get_setting('mobile_toggle_icon_only') && $variables['trigger']['icon']) {
     $label_classes[] = 'visually-hidden';
     $icon_classes[] = 'svg-icon--only';
   }
