@@ -1,0 +1,18 @@
+.row-navbar--fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.toolbar-horizontal .row-navbar--fixed {
+  top: 39px;
+}
+
+.toolbar-horizontal.toolbar-tray-open .row-navbar--fixed {
+  top: 79px;
+}
+
+.toolbar-vertical .row-navbar--fixed {
+  top: 39px;
+}

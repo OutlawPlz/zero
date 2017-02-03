@@ -1,16 +1,22 @@
 # Changelog
 
-## 2017
+All notable changes to this project will be documented in this file.
 
-- **31 Gen** - Fixed input password positioning. Added modules check. Manage
-               menu toggle button in settings. Added screenshot.png.
+## v0.1.1
 
-- **29 Gen** - Fixed components CSS declaration in libraries.yml. Removed 
-               hide_site_name option and relative template.
+- Fixed navbar position when there is no toolbar. Fixed node preview bar.
 
-- **27 Gen** - Removed Font Awesome. Use SVG icon. Fixed navbar, top 0. Fixed
-               gulpfile.js watch style. Font-size 18px.
+## v0.1.0
 
-- **26 Gen** - Added type drupal-theme to composer.json.
+- Fixed input password positioning. Added modules check. Manage menu toggle
+button in settings. Added screenshot.png.
 
-- **19 Gen** - Fixed overlapping of toolbar and navbar.
+- Fixed components CSS declaration in libraries.yml. Removed hide_site_name
+option and relative template.
+
+- Removed Font Awesome. Use SVG icon. Fixed navbar, top 0. Fixed gulpfile.js
+watch style. Font-size 18px.
+
+- Added type drupal-theme to composer.json.
+
+- Fixed overlapping of toolbar and navbar.

@@ -1,0 +1,47 @@
+
+// Node preview
+// -----------------------------------------------------------------------------
+
+.node-preview-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  background-color: yellowgreen;
+  padding: .5em;
+
+  .node-preview-backlink{
+    margin-right: 3em;
+
+    &:before {
+      content: '< ';
+    }
+  }
+
+  .js-form-item,
+  .form-select {
+    display: inline;
+  }
+}
+
+.toolbar-horizontal {
+
+  .node-preview-container {
+    top: 39px;
+  }
+
+  &.toolbar-tray-open {
+
+    .node-preview-container {
+      top: 79px;
+    }
+  }
+}
+
+.toolbar-vertical {
+
+  .node-preview-container {
+    top: 39px;
+  }
+}

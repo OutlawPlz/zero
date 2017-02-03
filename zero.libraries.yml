@@ -3,6 +3,15 @@ fixed-navbar:
   version: 1.0.0
   css:
     component:
-      styles/css/components/fixed-navbar.css: {}
+      styles/css/component/fixed-navbar.css: {}
   js:
     js/fixed-navbar.js: {}
+
+# Node preview
+node-preview:
+  version: 1.0.0
+  css:
+    component:
+      styles/css/component/node-preview.css: {}
+  js:
+    js/node-preview.js: {}

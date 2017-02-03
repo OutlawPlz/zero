@@ -93,8 +93,8 @@
 @media (min-width: 0) and (max-width: 560px) {
   .region-navbar {
     position: fixed;
+    top: 0;
     left: 0;
-    top: 39px;
     width: 80vw;
     height: 100vh;
     overflow-y: auto;
@@ -105,6 +105,12 @@
   .region-navbar {
     position: absolute;
     right: 0;
+  }
+}
+
+@media (min-width: 0) and (max-width: 560px) {
+  .toolbar-vertical .region-navbar {
+    top: 39px;
   }
 }
 

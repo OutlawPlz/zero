@@ -15,8 +15,8 @@
   // Mobile
   @include breakpoint($mobile-isolate) {
     position: fixed;
+    top: 0;
     left: 0;
-    top: $toolbar-height;
     width: 80vw;
     height: 100vh;
     overflow-y: auto;
@@ -25,6 +25,13 @@
   @include breakpoint($tablet-isolate) {
     position: absolute;
     right: 0;
+  }
+}
+
+.toolbar-vertical .region-navbar {
+
+  @include breakpoint($mobile-isolate) {
+    top: $toolbar-height;
   }
 }
 

@@ -1,0 +1,33 @@
+.node-preview-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  background-color: yellowgreen;
+  padding: .5em;
+}
+
+.node-preview-container .node-preview-backlink {
+  margin-right: 3em;
+}
+
+.node-preview-container .node-preview-backlink:before {
+  content: '< ';
+}
+
+.node-preview-container .js-form-item,
+.node-preview-container .form-select {
+  display: inline;
+}
+
+.toolbar-horizontal .node-preview-container {
+  top: 39px;
+}
+
+.toolbar-horizontal.toolbar-tray-open .node-preview-container {
+  top: 79px;
+}
+
+.toolbar-vertical .node-preview-container {
+  top: 39px;
+}

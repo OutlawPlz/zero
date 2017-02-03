@@ -9,8 +9,7 @@
   z-index: 1;
 }
 
-// Manage Drupal admin toolbar.
-body.toolbar-fixed {
+.toolbar-horizontal {
 
   .row-navbar--fixed {
     top: 39px;
@@ -18,11 +17,15 @@ body.toolbar-fixed {
 
   &.toolbar-tray-open {
 
-    &.toolbar-horizontal {
-
-      .row-navbar--fixed {
-        top: 79px;
-      }
+    .row-navbar--fixed {
+      top: 79px;
     }
+  }
+}
+
+.toolbar-vertical {
+
+  .row-navbar--fixed {
+    top: 39px;
   }
 }
