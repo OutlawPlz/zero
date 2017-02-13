@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 
 - Fixed navbar position when there is no toolbar. Fixed node preview bar.
 
+- Pager styling. Field tags styling. Node submitted styling. Change gulpfile.js 
+sass function.
+
 ## v0.1.0
 
 - Fixed input password positioning. Added modules check. Manage menu toggle

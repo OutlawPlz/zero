@@ -1,5 +1,68 @@
 @import "../mixins";
 
+$line-height: 2em;
+
 
 // Pagers
 // -----------------------------------------------------------------------------
+
+.pager {
+  text-align: center;
+
+  &__items {
+    display: inline-block;
+    padding-left: 0;
+  }
+
+  &__item {
+    padding: 0;
+
+    a {
+      display: block;
+      float: left;
+      line-height: $line-height;
+      padding-right: 1em;
+      padding-left: 1em;
+      color: $text;
+      background-color: $ultralight;
+      transition-property: background-color;
+      transition-duration: .3s;
+      border-top: 1px solid $border;
+      border-bottom: 1px solid $border;
+      border-right: 1px solid $border;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        background-color: $medium_dark;
+      }
+
+      &:active {}
+    }
+  }
+
+  &__item:first-child {
+
+    a {
+      border-left: 1px solid $border;
+      border-bottom-left-radius: $line-height / 2;
+      border-top-left-radius: $line-height / 2;
+    }
+  }
+
+  &__item:last-child {
+
+    a {
+      border-bottom-right-radius: $line-height / 2;
+      border-top-right-radius: $line-height / 2;
+    }
+  }
+
+  &__item--next {}
+
+  &__item--previous {}
+
+  &__item--first {}
+
+  &__item--last {}
+}

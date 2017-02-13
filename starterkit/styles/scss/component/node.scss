@@ -11,8 +11,8 @@
 
   &__content {}
 
-  &__submitted,
-  &__links {
+  &__submitted {
+    font-size: .875em;
     margin-bottom: $base-margin;
   }
 }

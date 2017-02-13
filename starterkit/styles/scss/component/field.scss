@@ -1,5 +1,14 @@
 @import "../mixins";
 
+$line-height: 2em;
+
+
+// Field
+// -----------------------------------------------------------------------------
+
+.field {
+  margin-bottom: $base-margin;
+}
 
 // Title field
 // -----------------------------------------------------------------------------
@@ -9,5 +18,38 @@
   // Edit
   input {
     display: block;
+  }
+}
+
+
+// Tag field
+// -----------------------------------------------------------------------------
+
+.field--name-field-tags {
+
+  .field__item {
+    display: inline-block;
+    margin-right: .3em;
+
+    a {
+      text-decoration: none;
+      color: $text;
+      display: block;
+      font-size: .875em;
+      line-height: $line-height;
+      padding-right: 1em;
+      padding-left: 1em;
+      background-color: $ultralight;
+      transition-property: background-color;
+      transition-duration: .3s;
+      border-radius: $line-height / 2;
+
+      &:hover,
+      &:focus {
+        background-color: $medium_dark;
+      }
+
+      &:active {}
+    }
   }
 }

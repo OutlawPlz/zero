@@ -58,10 +58,18 @@ var options = {
 
 // Compile SCSS.
 gulp.task( 'sass', function () {
-  return gulp.src( src.scss.glob )
-    .pipe( sass( options.sass ) ).on( 'error', sass.logError )
-    .pipe( autoprefixer( options.autoprefixer ) )
-    .pipe( gulp.dest( dest.css ) );
+
+  var folders = fs.readdirSync( src.scss.dir ).filter( function ( item ) {
+    return fs.statSync( path.join( src.scss.dir, item ) ).isDirectory();
+  } );
+
+  return folders.map( function ( folder ) {
+    return gulp.src( path.join( src.scss.dir, folder, '/*.scss' ) )
+      .pipe( sass( options.sass ) ).on( 'error', sass.logError )
+      .pipe( concat( folder + '.css' ) )
+      .pipe( autoprefixer( options.autoprefixer ) )
+      .pipe( gulp.dest( dest.css ) )
+  } )
 } );
 
 // Concat CSS.
