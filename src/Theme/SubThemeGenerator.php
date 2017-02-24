@@ -8,7 +8,6 @@
 namespace Drupal\zero\Theme;
 
 use Drupal\Core\Extension\Extension;
-use Drupal\Core\Extension\ThemeHandler;
 use Symfony\Component\Filesystem\Exception\IOException;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
@@ -35,84 +34,68 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
   private $finder;
 
   /**
-   * @var ThemeHandler $themeHandler
-   *   Manages the list of available themes.
-   */
-  protected $themeHandler;
-
-  /**
    * SubThemeGenerator constructor.
    *
    * @param Filesystem $fs
    *   Provides basic utility to manipulate the file system.
    * @param Finder $finder
    *   Finder allows to build rules to find files and directories.
-   * @param ThemeHandler $themeHandler
-   *   Manages the list of available themes.
    */
-  public function __construct(Filesystem $fs, Finder $finder, ThemeHandler $themeHandler) {
+  public function __construct(Filesystem $fs, Finder $finder) {
 
     $this->fs = $fs;
-    $this->themeHandler = $themeHandler;
     $this->finder = $finder;
   }
 
   /**
    * Generate a sub-theme.
    *
-   * @param string $baseThemeId
-   *   The machine-readable name of the base theme.
+   * @param \Drupal\Core\Extension\Extension $starterkit
+   *   An object representing the starterkit theme.
    * @param array $subTheme
+   *   An array containing sub-theme info.
    *
    * @throws \InvalidArgumentException
    *   Thrown when the base-theme does not exist.
    */
-  public function generateSubTheme($baseThemeId, array $subTheme) {
+  public function generateSubTheme(Extension $starterkit, array $subTheme) {
 
-    /*
-     * If $baseThemeId is not a valid theme id, the ThemeHandler will throw an
-     * InvalidArgumentException.
-     */
-    $baseTheme = $this->themeHandler->getTheme($baseThemeId);
-
-    $this->copyStarterkit($baseTheme, $subTheme);
-    $this->generateInfoYml($subTheme);
-    $this->generateLibrariesYml($subTheme);
-    $this->generateConfigYml($subTheme);
+    $this->copyStarterkit($starterkit, $subTheme);
+    $this->generateLibrariesYml($starterkit, $subTheme);
+    $this->generateBreakpointsYml($starterkit, $subTheme);
+    $this->generateConfigYml($starterkit, $subTheme);
+    $this->generatePackageJson($starterkit, $subTheme);
+    $this->generateInfoYml($starterkit, $subTheme);
   }
 
   /**
    * Copy starterkit to sub-theme folder.
    *
-   * @param \Drupal\Core\Extension\Extension $baseTheme
-   *   An object representing the base-theme.
+   * @param \Drupal\Core\Extension\Extension $starterkit
+   *   An object representing the starterkit theme.
    * @param array $subTheme
    *   An array containing sub-theme info.
    *
    * @throws IOException
    *   Thrown when starterkit/ folder doesn't exist.
    */
-  public function copyStarterkit(Extension $baseTheme, array $subTheme) {
+  public function copyStarterkit(Extension $starterkit, array $subTheme) {
 
-    $starterkit = $baseTheme->getPath() . '/starterkit';
-
-    if (!$this->fs->exists($starterkit)) {
-      throw new IOException('The starterkit/ folder doesn\'t exist');
-    }
-
-    $this->fs->mirror($starterkit, 'themes/' . $subTheme['machine_name']);
+    $this->fs->mirror($starterkit->getPath(), 'themes/' . $subTheme['machine_name']);
   }
 
   /**
    * Takes an array representing a theme.info.yml, and writes the settings to
    * the generated sub-theme.
    *
+   * @param \Drupal\Core\Extension\Extension $starterkit
+   *   An object representing the starterkit theme.
    * @param array $subTheme
    *   An array containing sub-theme info.
    */
-  public function generateInfoYml(array $subTheme) {
+  public function generateInfoYml(Extension $starterkit, array $subTheme) {
 
-    $starterkitInfoPath = 'themes/' . $subTheme['machine_name'] . '/starterkit.info.yml';
+    $starterkitInfoPath = 'themes/' . $subTheme['machine_name'] . '/' . $starterkit->getFilename();
     $subThemeInfoPath = 'themes/' . $subTheme['machine_name'] . '/' . $subTheme['machine_name'] . '.info.yml';
 
     $subThemeInfo = Yaml::parse(file_get_contents($starterkitInfoPath));
@@ -135,7 +118,7 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
 
     if (isset($subThemeInfo['libraries'])) {
       $subThemeInfo['libraries'] = str_replace(
-        'starterkit',
+        $starterkit->getName(),
         $subTheme['machine_name'],
         $subThemeInfo['libraries']
       );
@@ -149,12 +132,14 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
   /**
    * Generate libraries file.
    *
+   * @param \Drupal\Core\Extension\Extension $starterkit
+   *   An object representing the starterkit theme.
    * @param array $subTheme
    *   An array containing sub-theme info.
    */
-  public function generateLibrariesYml(array $subTheme) {
+  public function generateLibrariesYml(Extension $starterkit, array $subTheme) {
 
-    $starterkitLibrariesPath = 'themes/' . $subTheme['machine_name'] . '/starterkit.libraries.yml';
+    $starterkitLibrariesPath = 'themes/' . $subTheme['machine_name'] . '/' . $starterkit->getName() . '.libraries.yml';
     $subThemeLibrariesPath = 'themes/' . $subTheme['machine_name'] . '/' . $subTheme['machine_name'] . '.libraries.yml';
 
     $this->fs->rename($starterkitLibrariesPath, $subThemeLibrariesPath);
@@ -163,10 +148,12 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
   /**
    * Generate files in the config directory.
    *
+   * @param \Drupal\Core\Extension\Extension $starterkit
+   *   An object representing the starterkit theme.
    * @param array $subTheme
    *   An array containing sub-theme info.
    */
-  public function generateConfigYml(array $subTheme) {
+  public function generateConfigYml(Extension $starterkit, array $subTheme) {
 
     $starterkitConfigPath = 'themes/' . $subTheme['machine_name'] . '/config';
     $configYmlFiles = $this->finder->files()->in($starterkitConfigPath);
@@ -176,7 +163,7 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
 
       $filePathname = $starterkitConfigPath . '/' . $configYmlFile->getRelativePathname();
       $fileContent = str_replace(
-        'starterkit',
+        $starterkit->getName(),
         $subTheme['machine_name'],
         file_get_contents($filePathname)
       );
@@ -184,13 +171,63 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
       file_put_contents($filePathname, $fileContent);
 
       $filePathrename = str_replace(
-        'starterkit',
+        $starterkit->getName(),
         $subTheme['machine_name'],
         $filePathname
       );
 
       $this->fs->rename($filePathname, $filePathrename);
     }
+  }
+
+  /**
+   * Generate breakpoints file.
+   *
+   * @param \Drupal\Core\Extension\Extension $starterkit
+   *   An object representing the starterkit theme.
+   * @param array $subTheme
+   *   An array containing sub-theme info.
+   */
+  public function generateBreakpointsYml(Extension $starterkit, array $subTheme) {
+
+    $starterkitBreakpointsPath = 'themes/' . $subTheme['machine_name'] . '/' . $starterkit->getName() . '.breakpoints.yml';
+    $subThemeBreakpointsPath = 'themes/' . $subTheme['machine_name'] . '/' . $subTheme['machine_name'] . '.breakpoints.yml';
+
+    $fileContent = str_replace(
+      $starterkit->getName(),
+      $subTheme['machine_name'],
+      file_get_contents($starterkitBreakpointsPath)
+    );
+
+    file_put_contents($starterkitBreakpointsPath, $fileContent);
+
+    $this->fs->rename($starterkitBreakpointsPath, $subThemeBreakpointsPath);
+  }
+
+  /**
+   * Generate package.json file.
+   *
+   * @param \Drupal\Core\Extension\Extension $starterkit
+   *   An object representing the starterkit theme.
+   * @param array $subTheme
+   *   An array containing sub-theme info.
+   */
+  public function generatePackageJson(Extension $starterkit, array $subTheme) {
+
+    if (!extension_loaded('json')) {
+      return;
+    }
+
+    $packageJsonPath = 'themes/' . $subTheme['machine_name'] . '/package.json';
+    $packageJson = json_decode(file_get_contents($packageJsonPath), TRUE);
+
+    $packageJson['name'] = $subTheme['machine_name'];
+
+    if (isset($packageJson['description'])) {
+      $packageJson['description'] = $subTheme['description'];
+    }
+
+    file_put_contents($packageJsonPath, json_encode($packageJson));
   }
 
   /**

@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - starterkit
-id: starterkit_main_menu
-theme: starterkit
+    - zero_starterkit
+id: zero_starterkit_main_menu
+theme: zero_starterkit
 region: navbar
 weight: 0
 provider: null

@@ -167,9 +167,11 @@ function zero_form_submit(array $form, FormStateInterface $form_state) {
 
   $fs = new Filesystem();
   $finder = new Finder();
+  /** @var \Drupal\Core\Extension\ThemeHandler $themeHandler */
   $themeHandler = \Drupal::service('theme_handler');
+  /** @var Drupal\Core\Extension\Extension $starterkit */
+  $starterkit = $themeHandler->getTheme('zero_starterkit');
 
-  $subThemeGenerator = new SubThemeGenerator($fs, $finder, $themeHandler);
-
-  $subThemeGenerator->generateSubTheme('zero', $subTheme);
+  $subThemeGenerator = new SubThemeGenerator($fs, $finder);
+  $subThemeGenerator->generateSubTheme($starterkit, $subTheme);
 }

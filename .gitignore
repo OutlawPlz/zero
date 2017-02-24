@@ -1,4 +1,2 @@
-.idea/
-
-/node_modules/
-/starterkit/node_modules/
+/.idea/
+node_modules/

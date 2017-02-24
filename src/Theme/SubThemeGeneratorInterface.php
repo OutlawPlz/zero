@@ -6,6 +6,8 @@
 
 namespace Drupal\zero\Theme;
 
+use Drupal\Core\Extension\Extension;
+
 /**
  * Interface SubThemeGeneratorInterface. Provides an interface generating a
  * sub-theme.
@@ -17,10 +19,10 @@ interface SubThemeGeneratorInterface {
   /**
    * Generate a sub-theme.
    *
-   * @param string $baseThemeId
-   *   The machine-readable name of the base theme.
+   * @param \Drupal\Core\Extension\Extension $starterkit
+   *   An object representing the starterkit theme.
    * @param array $subTheme
    *   An array containing sub-theme info.
    */
-  public function generateSubTheme($baseThemeId, array $subTheme);
+  public function generateSubTheme(Extension $starterkit, array $subTheme);
 }

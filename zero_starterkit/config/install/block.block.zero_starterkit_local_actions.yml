@@ -2,9 +2,9 @@ langcode: en
 status: true
 dependencies:
   theme:
-    - starterkit
-id: starterkit_local_actions
-theme: starterkit
+    - zero_starterkit
+id: zero_starterkit_local_actions
+theme: zero_starterkit
 region: content
 weight: 3
 provider: null

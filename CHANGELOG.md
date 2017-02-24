@@ -9,6 +9,10 @@ All notable changes to this project will be documented in this file.
 - Pager styling. Field tags styling. Node submitted styling. Change gulpfile.js 
 sass function.
 
+- Starterkit.breakpoints.yml file, generateBreakpointsYml(). Improved sub-theme
+generator. Refactor starterkit to zero_starterkit. Added settings.yml to
+zero_starterkit. Added generatePackageJson() function.
+
 ## v0.1.0
 
 - Fixed input password positioning. Added modules check. Manage menu toggle

@@ -1,5 +1,5 @@
 
-( function () {
+( function ( Drupal ) {
 
   'use strict';
 
@@ -13,4 +13,4 @@
     animationOut: 'animation-out'
   } );
 
-} () );
+} ( Drupal ) );
