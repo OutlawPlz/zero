@@ -3,14 +3,11 @@
 
   'use strict';
 
-  var element = document.querySelector( '.row-navbar' );
+  Drupal.behaviors.generic = {
+    attach: function ( context, settings ) {
 
-  new Droppy( element, {
-    parentSelector: '.wrapper-navbar',
-    triggerSelector: '.trigger-navbar',
-    dropdownSelector: '.region-navbar',
-    animationIn: 'animation-in',
-    animationOut: 'animation-out'
-  } );
+      // Your code...
+    }
+  }
 
 } ( Drupal ) );

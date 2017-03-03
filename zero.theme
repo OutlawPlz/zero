@@ -6,6 +6,7 @@
  */
 
 use Drupal\Core\Template\Attribute;
+use Drupal\svg_icon\Entity\SvgIcon;
 
 /**
  * Preprocess variables for html templates.
@@ -58,48 +59,34 @@ function zero_preprocess_page(&$variables) {
     )
   );
 
-  $variables['trigger']['label'] = theme_get_setting('mobile_toggle_label');
-  $variables['trigger']['icon'] = FALSE;
+  $variables['adaptive_navbar'] = theme_get_setting('enable_adaptive_navbar');
 
-  $mobile_toggle_svg = theme_get_setting('mobile_toggle_svg');
-  $mobile_toggle_icon_id = theme_get_setting('mobile_toggle_icon_id');
+  if ($variables['adaptive_navbar']) {
 
-  if ($mobile_toggle_svg && $mobile_toggle_icon_id) {
+    // Attach the library.
+    $variables['#attached']['library'][] = 'droppy/droppy';
+    $variables['#attached']['library'][] = 'zero/adaptive-navbar';
 
-    $entity = Drupal\svg_icon\Entity\SvgIcon::load($mobile_toggle_svg);
-    $svg = $entity->get('svg');
-    /** @var \Drupal\file\FileInterface $file */
-    $file = Drupal\file\Entity\File::load($svg[0]);
-
-    $variables['trigger']['icon_svg'] = t(file_url_transform_relative($file->url()));
-    $variables['trigger']['icon_id'] = t($mobile_toggle_icon_id);
-    $variables['trigger']['icon'] = TRUE;
-
-    $variables['#attached']['library'][] = 'svg_icon/svg_icon';
+    $variables['trigger']['label'] = theme_get_setting('navbar_button_label');
   }
 
-  $label_classes = array(
-    'trigger__label'
-  );
+  $variables['use_svg_icon'] = theme_get_setting('navbar_button_svg_sprite');
 
-  $icon_classes = array(
-    'trigger__icon',
-    'svg-icon',
-    'svg-icon--' . $mobile_toggle_icon_id
-  );
+  if ($variables['use_svg_icon']) {
 
-  if (theme_get_setting('mobile_toggle_icon_only') && $variables['trigger']['icon']) {
-    $label_classes[] = 'visually-hidden';
-    $icon_classes[] = 'svg-icon--only';
+    $config = theme_get_setting('navbar_button_svg_sprite');
+    /** @var \Drupal\svg_icon\Entity\SvgIcon $entity */
+    $entity = SvgIcon::load($config);
+
+    $variables['trigger']['icon'] = array(
+      '#type' => 'svg_icon_text',
+      '#label' => theme_get_setting('navbar_button_label'),
+      '#svg_sprite' => $entity->getSvgSprite(),
+      '#icon_id' => theme_get_setting('navbar_button_icon_id'),
+      '#icon_right' => theme_get_setting('navbar_button_icon_right'),
+      '#hide_label' => theme_get_setting('navbar_button_hide_label')
+    );
   }
-
-  $variables['trigger']['label_attributes'] = new Attribute(array(
-    'class' => $label_classes
-  ));
-
-  $variables['trigger']['icon_attributes'] = new Attribute(array(
-    'class' => $icon_classes
-  ));
 
   $variables['page']['#cache']['contexts'][] = 'route';
 

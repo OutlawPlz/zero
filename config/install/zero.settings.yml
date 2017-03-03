@@ -1,5 +1,7 @@
 fixed_navbar: false
-mobile_toggle_label: 'Menu'
-mobile_toggle_svg: ''
-mobile_toggle_icon_id: ''
-mobile_toggle_icon_only: false
+enable_adaptive_navbar: true
+navbar_button_label: 'Menu'
+navbar_button_svg_sprite: ''
+navbar_button_icon_id: ''
+navbar_button_hide_label: false
+navbar_button_icon_right: false

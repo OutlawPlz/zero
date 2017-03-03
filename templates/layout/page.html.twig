@@ -65,18 +65,21 @@
     </div>
   {% endif %}
   <header class="wrapper wrapper-header" role="banner" aria-label="{{ 'Site header'| t }}">
-    <div class="row row-navbar">
+    <div class="row row-navbar"{{ droppy_attributes }}>
       <div{{ container.attributes }}>
         {{ page.branding }}
         <div class="wrapper wrapper-navbar">
-          <button class="trigger trigger-navbar">
-            {% if trigger.icon %}
-            <svg{{ trigger.icon_attributes }}>
-              <use xlink:href="{{ trigger.icon_svg }}#{{ trigger.icon_id }}"/>
-            </svg>
+          {% if adaptive_navbar %}
+            {% if use_svg_icon %}
+              <button class="trigger trigger-navbar">
+                {{ trigger.icon }}
+              </button>
+            {% else %}
+              <button class="trigger trigger-navbar">
+                <span>{{ trigger.label }}</span>
+              </button>
             {% endif %}
-            <span{{ trigger.label_attributes }}>{{ trigger.label }}</span>
-          </button>
+          {% endif %}
           {{ page.navbar }}
         </div>
       </div>

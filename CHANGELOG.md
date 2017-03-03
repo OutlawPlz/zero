@@ -13,6 +13,8 @@ sass function.
 generator. Refactor starterkit to zero_starterkit. Added settings.yml to
 zero_starterkit. Added generatePackageJson() function.
 
+- Improved Droppy integration. Impreved SVG Icon integration.
+
 ## v0.1.0
 
 - Fixed input password positioning. Added modules check. Manage menu toggle

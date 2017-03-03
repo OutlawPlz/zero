@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\svg_icon\Entity\SvgIcon;
 use Drupal\zero\Theme\SubThemeGenerator;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
@@ -18,16 +19,18 @@ function zero_form_system_theme_settings_alter(array &$form, FormStateInterface 
   /** @var Drupal\Core\Extension\ModuleHandlerInterface $module_handler */
   $module_handler = \Drupal::service('module_handler');
 
-  $svg_icon = TRUE;
+  $svg_icon_enabled = FALSE;
+  $droppy_enabled = FALSE;
 
-  if (!$module_handler->moduleExists('droppy')) {
-    drupal_set_message(t('This theme depends on Droppy module. Please, download and install it.'), 'warning');
+  if ($module_handler->moduleExists('droppy')) {
+    $droppy_enabled = TRUE;
   }
 
-  if (!$module_handler->moduleExists('svg_icon')) {
-    drupal_set_message(t('This theme depends on SVG Icon module. Please, download and install it.'), 'warning');
-    $svg_icon = FALSE;
+  if ($module_handler->moduleExists('svg_icon')) {
+    $svg_icon_enabled = TRUE;
   }
+
+  $form['#submit'][] = 'zero_form_submit';
 
   $form['subtheme'] = array(
     '#type' => 'details',
@@ -86,63 +89,75 @@ function zero_form_system_theme_settings_alter(array &$form, FormStateInterface 
     )
   );
 
-  $form['fixed_navbar'] = array(
-    '#type' => 'checkbox',
-    '#title' => t('Fixed navbar'),
-    '#description' => t('The navbar is fixed on top of the page.'),
-    '#default_value' => theme_get_setting('fixed_navbar'),
-    '#weight' => -1
-  );
-
-  $form['mobile_toggle'] = array(
+  $form['navbar'] = array(
     '#type' => 'details',
-    '#title' => t('Mobile button'),
+    '#title' => t('Adaptive navbar'),
     '#weight' => -1,
     '#open' => TRUE
   );
 
-  $form['mobile_toggle']['mobile_toggle_label'] = array(
+  $form['navbar']['fixed_navbar'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Fixed navbar'),
+    '#description' => t('The navbar is fixed on top of the page.'),
+    '#default_value' => theme_get_setting('fixed_navbar')
+  );
+
+  $form['navbar']['enable_adaptive_navbar'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Adaptive navbar'),
+    '#description' => t('Please, download and enable <a href="https://github.com/OutlawPlz/drupal_droppy" target="_blank">Droppy</a> module to make the navbar adaptive.'),
+    '#default_value' => $droppy_enabled ? theme_get_setting('enable_adaptive_navbar') : FALSE,
+    '#disabled' => $droppy_enabled ? FALSE : TRUE
+  );
+
+  // If Droppy module is disabled, return.
+  if (!$droppy_enabled) {
+    return;
+  }
+
+  $form['navbar']['navbar_button_label'] = array(
     '#type' => 'textfield',
     '#title' => t('Button label'),
     '#description' => t('The label used by the toggle menu button on small screen devices.'),
-    '#default_value' => theme_get_setting('mobile_toggle_label')
+    '#default_value' => theme_get_setting('navbar_button_label')
   );
 
-  if ($svg_icon) {
+  $form['navbar']['navbar_button_svg_sprite'] = array(
+    '#type' => 'select',
+    '#title' => t('SVG Sprite'),
+    '#description' => t('Please, download and enable <a href="https://github.com/OutlawPlz/svg_icon" target="_blank">SVG Icon</a> module to use icons in the nabvar button.'),
+    '#options' => SvgIcon::getConfigList(),
+    '#empty_value' => '',
+    '#default_value' => $svg_icon_enabled ? theme_get_setting('navbar_button_svg_sprite') : FALSE,
+    '#disabled' => $svg_icon_enabled ? FALSE : TRUE
+  );
 
-    $entities = Drupal\svg_icon\Entity\SvgIcon::loadMultiple();
-    $config_list = array();
-
-    /** @var Drupal\svg_icon\Entity\SvgIconInterface $entity */
-    foreach ($entities as $entity) {
-      $config_list[$entity->get('id')] = $entity->get('label');
-    }
-
-    $form['mobile_toggle']['mobile_toggle_svg'] = array(
-      '#type' => 'select',
-      '#title' => t('SVG Sprite'),
-      '#description' => t('Select the SVG sprite file.'),
-      '#options' => $config_list,
-      '#empty_value' => '',
-      '#default_value' => theme_get_setting('mobile_toggle_svg')
-    );
-
-    $form['mobile_toggle']['mobile_toggle_icon_id'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Icon ID'),
-      '#description' => t('The ID of the icon to display.'),
-      '#default_value' => theme_get_setting('mobile_toggle_icon_id')
-    );
-
-    $form['mobile_toggle']['mobile_toggle_icon_only'] = array(
-      '#type' => 'checkbox',
-      '#title' => t('Icon only'),
-      '#description' => t('Display the icon and hide the label.'),
-      '#default_value' => theme_get_setting('mobile_toggle_icon_only'),
-    );
+  // If SVG Icon module is disabled, return.
+  if (!$svg_icon_enabled) {
+    return;
   }
 
-  $form['#submit'][] = 'zero_form_submit';
+  $form['navbar']['navbar_button_icon_id'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Icon ID'),
+    '#description' => t('The ID of the icon to display.'),
+    '#default_value' => theme_get_setting('navbar_button_icon_id')
+  );
+
+  $form['navbar']['navbar_button_icon_right'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Icon right'),
+    '#description' => t('Print the icon on the right of the label.'),
+    '#default_value' => theme_get_setting('navbar_button_icon_right')
+  );
+
+  $form['navbar']['navbar_button_hide_label'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Hide label'),
+    '#description' => t('Display the icon and hide the label.'),
+    '#default_value' => theme_get_setting('navbar_button_hide_label')
+  );
 }
 
 /**

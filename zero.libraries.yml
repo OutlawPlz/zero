@@ -1,11 +1,17 @@
 # Fixed navigation
 fixed-navbar:
-  version: 1.0.0
+  version: VERSION
   css:
     component:
       styles/css/component/fixed-navbar.css: {}
   js:
     js/fixed-navbar.js: {}
+
+# Adaptive navbar
+adaptive-navbar:
+  version: VERSION
+  js:
+    js/adaptive-navbar.js: {}
 
 # Node preview
 node-preview:
