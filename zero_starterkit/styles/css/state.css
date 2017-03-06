@@ -1,0 +1,93 @@
+@keyframes fake {
+  from {
+  }
+  to {
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+ul.menu.animation-in {
+  animation-name: fadeIn;
+  animation-duration: .3s;
+}
+
+ul.menu.animation-out {
+  animation-name: fadeOut;
+  animation-duration: .3s;
+}
+
+@media (min-width: 0) and (max-width: 560px) {
+  .region-navbar.animation-in {
+    animation-name: slideInLeft;
+    animation-duration: .3s;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 850px) {
+  .region-navbar.animation-in {
+    animation-name: fadeIn;
+    animation-duration: .3s;
+  }
+}
+
+@media (min-width: 0) and (max-width: 560px) {
+  .region-navbar.animation-out {
+    animation-name: slideOutLeft;
+    animation-duration: .3s;
+  }
+}
+
+@media (min-width: 561px) and (max-width: 850px) {
+  .region-navbar.animation-out {
+    animation-name: fadeOut;
+    animation-duration: .3s;
+  }
+}
+
+.field--name-field-tags .field__item a,
+.pager__item a {
+  transition-property: background-color;
+  transition-duration: .3s;
+  background-color: #f4f5f6;
+}
+
+.field--name-field-tags .field__item a:hover, .field--name-field-tags .field__item a:focus,
+.pager__item a:hover,
+.pager__item a:focus {
+  background-color: #e5e5e5;
+}

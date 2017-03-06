@@ -1,0 +1,16 @@
+@import "../mixins";
+
+// Transitions
+// -----------------------------------------------------------------------------
+
+.field--name-field-tags .field__item a,
+.pager__item a {
+  transition-property: background-color;
+  transition-duration: .3s;
+  background-color: $ultralight;
+
+  &:hover,
+  &:focus {
+    background-color: $medium_dark;
+  }
+}

@@ -13,7 +13,9 @@ sass function.
 generator. Refactor starterkit to zero_starterkit. Added settings.yml to
 zero_starterkit. Added generatePackageJson() function.
 
-- Improved Droppy integration. Impreved SVG Icon integration.
+- Improved Droppy integration. Improved SVG Icon integration.
+
+- Added state.css, fix typo. Added ckeditor.scss to layout/ folder.
 
 ## v0.1.0
 

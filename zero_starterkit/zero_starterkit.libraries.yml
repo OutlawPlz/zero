@@ -8,6 +8,7 @@ styles:
       styles/css/layout.css: {}
     component:
       styles/css/component.css: {}
+      styles/css/state.css: {}
   js:
     js/generic.js: {}
 

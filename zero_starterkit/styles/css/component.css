@@ -1,46 +1,3 @@
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 .block-system-branding-block .site-logo img {
   height: 3em;
   padding-top: .5em;
@@ -48,91 +5,6 @@
   vertical-align: middle;
 }
 
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 
 li.droppy__parent {
   position: relative;
@@ -195,49 +67,6 @@ li.droppy__parent {
   position: relative;
 }
 
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 .field {
   margin-bottom: 1.5em;
 }
@@ -260,56 +89,7 @@ li.droppy__parent {
   padding-right: 1em;
   padding-left: 1em;
   background-color: #f4f5f6;
-  transition-property: background-color;
-  transition-duration: .3s;
   border-radius: 1em;
-}
-
-.field--name-field-tags .field__item a:hover, .field--name-field-tags .field__item a:focus {
-  background-color: #e5e5e5;
-}
-
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
 
 .form-checkbox {
@@ -350,49 +130,6 @@ li.droppy__parent {
   margin-right: 7px;
 }
 
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 ul.menu {
   margin: 0;
 }
@@ -427,16 +164,6 @@ ul.menu .menu-item a {
   }
 }
 
-ul.menu.animation-in {
-  animation-name: fadeIn;
-  animation-duration: .3s;
-}
-
-ul.menu.animation-out {
-  animation-name: fadeOut;
-  animation-duration: .3s;
-}
-
 @media (min-width: 851px) {
   .menu--main {
     float: left;
@@ -467,94 +194,8 @@ ul.menu.animation-out {
   }
 }
 
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 .messages {
   margin-bottom: 1.5em;
-}
-
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
 
 .node {
@@ -564,49 +205,6 @@ ul.menu.animation-out {
 .node__submitted {
   font-size: .875em;
   margin-bottom: 1.5em;
-}
-
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
 
 .pager {
@@ -629,17 +227,10 @@ ul.menu.animation-out {
   padding-right: 1em;
   padding-left: 1em;
   color: #333;
-  background-color: #f4f5f6;
-  transition-property: background-color;
-  transition-duration: .3s;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   border-right: 1px solid #ccc;
   text-decoration: none;
-}
-
-.pager__item a:hover, .pager__item a:focus {
-  background-color: #e5e5e5;
 }
 
 .pager__item:first-child a {
@@ -653,49 +244,6 @@ ul.menu.animation-out {
   border-top-right-radius: 1em;
 }
 
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 @media (min-width: 0) and (max-width: 560px) {
   .region-navbar {
     position: fixed;
@@ -703,25 +251,6 @@ ul.menu.animation-out {
     width: 80vw;
     height: 100vh;
     overflow-y: auto;
-  }
-  .region-navbar.animation-in {
-    animation-name: slideInLeft;
-    animation-duration: .3s;
-  }
-  .region-navbar.animation-out {
-    animation-name: slideOutLeft;
-    animation-duration: .3s;
-  }
-}
-
-@media (min-width: 561px) and (max-width: 850px) {
-  .region-navbar.animation-in {
-    animation-name: fadeIn;
-    animation-duration: .3s;
-  }
-  .region-navbar.animation-out {
-    animation-name: fadeOut;
-    animation-duration: .3s;
   }
 }
 
@@ -738,49 +267,6 @@ ul.menu.animation-out {
   height: 1.5em;
 }
 
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 .row {
   margin-bottom: 1em;
 }
@@ -792,49 +278,6 @@ ul.menu.animation-out {
 
 .row-highlighted {
   margin-bottom: 0;
-}
-
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
 
 .tabs {
@@ -873,49 +316,6 @@ ul.primary a.is-active {
   border-bottom-color: #fff;
 }
 
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 #toolbar-administration {
   position: fixed;
   top: 0;
@@ -925,49 +325,6 @@ ul.primary a.is-active {
 
 body.toolbar-fixed.toolbar-tray-open.toolbar-vertical {
   margin-left: 0;
-}
-
-@keyframes fake {
-  from {
-  }
-  to {
-  }
-}
-
-@keyframes slideInLeft {
-  from {
-    transform: translate3d(-100%, 0, 0);
-  }
-  to {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes slideOutLeft {
-  from {
-    transform: translate3d(0, 0, 0);
-  }
-  to {
-    transform: translate3d(-100%, 0, 0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeOut {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
 }
 
 .wrapper-footer {

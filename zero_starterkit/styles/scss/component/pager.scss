@@ -24,18 +24,13 @@ $line-height: 2em;
       padding-right: 1em;
       padding-left: 1em;
       color: $text;
-      background-color: $ultralight;
-      transition-property: background-color;
-      transition-duration: .3s;
       border-top: 1px solid $border;
       border-bottom: 1px solid $border;
       border-right: 1px solid $border;
       text-decoration: none;
 
       &:hover,
-      &:focus {
-        background-color: $medium_dark;
-      }
+      &:focus {}
 
       &:active {}
     }

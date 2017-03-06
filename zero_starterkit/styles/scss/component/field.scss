@@ -40,14 +40,10 @@ $line-height: 2em;
       padding-right: 1em;
       padding-left: 1em;
       background-color: $ultralight;
-      transition-property: background-color;
-      transition-duration: .3s;
       border-radius: $line-height / 2;
 
       &:hover,
-      &:focus {
-        background-color: $medium_dark;
-      }
+      &:focus {}
 
       &:active {}
     }

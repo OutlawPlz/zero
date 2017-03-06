@@ -26,8 +26,12 @@ regions:
   footer_suffix: 'Footer suffix'
 
 libraries:
-  - droppy/droppy
   - zero_starterkit/open-sans
   - zero_starterkit/styles
   # - zero_starterkit/waypoints
   # - zero_starterkit/smooth-scroll
+
+ckeditor_stylesheets:
+  - styles/css/base.css
+  - styles/css/component.css
+  - styles/css/layout.css

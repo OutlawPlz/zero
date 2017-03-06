@@ -20,36 +20,7 @@
     width: 80vw;
     height: 100vh;
     overflow-y: auto;
-
-    // Animation
-    &.animation-in {
-      animation-name: slideInLeft;
-      animation-duration: .3s;
-    }
-
-    &.animation-out {
-      animation-name: slideOutLeft;
-      animation-duration: .3s;
-    }
   }
-
-  // Tablet
-  @include breakpoint($tablet-isolate) {
-
-    // Animation
-    &.animation-in {
-      animation-name: fadeIn;
-      animation-duration: .3s;
-    }
-
-    &.animation-out {
-      animation-name: fadeOut;
-      animation-duration: .3s;
-    }
-  }
-
-  // Desktop
-  @include breakpoint($wide) {}
 }
 
 .trigger-navbar {
