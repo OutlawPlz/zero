@@ -78,6 +78,12 @@ function zero_preprocess_page(&$variables) {
     /** @var \Drupal\svg_icon\Entity\SvgIcon $entity */
     $entity = SvgIcon::load($config);
 
+    // If the entity is not an instance of SvgIcon, set use_svg_icon to false and return.
+    if (!$entity instanceof SvgIcon) {
+      $variables['use_svg_icon'] = FALSE;
+      return;
+    }
+
     $variables['trigger']['icon'] = array(
       '#type' => 'svg_icon_text',
       '#label' => theme_get_setting('navbar_button_label'),

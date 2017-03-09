@@ -120,7 +120,12 @@ function zero_form_system_theme_settings_alter(array &$form, FormStateInterface 
     '#type' => 'textfield',
     '#title' => t('Button label'),
     '#description' => t('The label used by the toggle menu button on small screen devices.'),
-    '#default_value' => theme_get_setting('navbar_button_label')
+    '#default_value' => theme_get_setting('navbar_button_label'),
+    '#states' => array(
+      'disabled' => array(
+        ':input[name="enable_adaptive_navbar"]' => array('checked' => FALSE)
+      )
+    )
   );
 
   $form['navbar']['navbar_button_svg_sprite'] = array(
@@ -130,7 +135,12 @@ function zero_form_system_theme_settings_alter(array &$form, FormStateInterface 
     '#options' => SvgIcon::getConfigList(),
     '#empty_value' => '',
     '#default_value' => $svg_icon_enabled ? theme_get_setting('navbar_button_svg_sprite') : FALSE,
-    '#disabled' => $svg_icon_enabled ? FALSE : TRUE
+    '#disabled' => $svg_icon_enabled ? FALSE : TRUE,
+    '#states' => array(
+      'disabled' => array(
+        ':input[name="enable_adaptive_navbar"]' => array('checked' => FALSE)
+      )
+    )
   );
 
   // If SVG Icon module is disabled, return.
@@ -142,21 +152,36 @@ function zero_form_system_theme_settings_alter(array &$form, FormStateInterface 
     '#type' => 'textfield',
     '#title' => t('Icon ID'),
     '#description' => t('The ID of the icon to display.'),
-    '#default_value' => theme_get_setting('navbar_button_icon_id')
+    '#default_value' => theme_get_setting('navbar_button_icon_id'),
+    '#states' => array(
+      'disabled' => array(
+        ':input[name="enable_adaptive_navbar"]' => array('checked' => FALSE)
+      )
+    )
   );
 
   $form['navbar']['navbar_button_icon_right'] = array(
     '#type' => 'checkbox',
     '#title' => t('Icon right'),
     '#description' => t('Print the icon on the right of the label.'),
-    '#default_value' => theme_get_setting('navbar_button_icon_right')
+    '#default_value' => theme_get_setting('navbar_button_icon_right'),
+    '#states' => array(
+      'disabled' => array(
+        ':input[name="enable_adaptive_navbar"]' => array('checked' => FALSE)
+      )
+    )
   );
 
   $form['navbar']['navbar_button_hide_label'] = array(
     '#type' => 'checkbox',
     '#title' => t('Hide label'),
     '#description' => t('Display the icon and hide the label.'),
-    '#default_value' => theme_get_setting('navbar_button_hide_label')
+    '#default_value' => theme_get_setting('navbar_button_hide_label'),
+    '#states' => array(
+      'disabled' => array(
+        ':input[name="enable_adaptive_navbar"]' => array('checked' => FALSE)
+      )
+    )
   );
 }
 

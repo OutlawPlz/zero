@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.1.2
+
+- Fixed delete svg sprite when in use by the theme. Added states to theme 
+settings form.
+
 ## v0.1.1
 
 - Fixed navbar position when there is no toolbar. Fixed node preview bar.
