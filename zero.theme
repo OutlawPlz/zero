@@ -6,12 +6,10 @@
  */
 
 use Drupal\Core\Template\Attribute;
-use Drupal\svg_icon\Entity\SvgIcon;
+use Drupal\svg_sprite\Entity\SvgSprite;
 
 /**
  * Preprocess variables for html templates.
- *
- * @param $variables
  */
 function zero_preprocess_html(&$variables) {
 
@@ -33,8 +31,6 @@ function zero_preprocess_html(&$variables) {
 
 /**
  * Preprocess variables for page templates.
- *
- * @param $variables
  */
 function zero_preprocess_page(&$variables) {
 
@@ -75,11 +71,11 @@ function zero_preprocess_page(&$variables) {
   if ($variables['use_svg_icon']) {
 
     $config = theme_get_setting('navbar_button_svg_sprite');
-    /** @var \Drupal\svg_icon\Entity\SvgIcon $entity */
-    $entity = SvgIcon::load($config);
+    /** @var \Drupal\svg_sprite\Entity\SvgSprite $entity */
+    $entity = SvgSprite::load($config);
 
     // If the entity is not an instance of SvgIcon, set use_svg_icon to false and return.
-    if (!$entity instanceof SvgIcon) {
+    if (!$entity instanceof SvgSprite) {
       $variables['use_svg_icon'] = FALSE;
       return;
     }

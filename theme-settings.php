@@ -1,7 +1,7 @@
 <?php
 
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\svg_icon\Entity\SvgIcon;
+use Drupal\svg_sprite\Entity\SvgSprite;
 use Drupal\zero\Theme\SubThemeGenerator;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
@@ -19,15 +19,15 @@ function zero_form_system_theme_settings_alter(array &$form, FormStateInterface 
   /** @var Drupal\Core\Extension\ModuleHandlerInterface $module_handler */
   $module_handler = \Drupal::service('module_handler');
 
-  $svg_icon_enabled = FALSE;
+  $svg_sprite_enabled = FALSE;
   $droppy_enabled = FALSE;
 
   if ($module_handler->moduleExists('droppy')) {
     $droppy_enabled = TRUE;
   }
 
-  if ($module_handler->moduleExists('svg_icon')) {
-    $svg_icon_enabled = TRUE;
+  if ($module_handler->moduleExists('svg_sprite')) {
+    $svg_sprite_enabled = TRUE;
   }
 
   $form['#submit'][] = 'zero_form_submit';
@@ -132,10 +132,10 @@ function zero_form_system_theme_settings_alter(array &$form, FormStateInterface 
     '#type' => 'select',
     '#title' => t('SVG Sprite'),
     '#description' => t('Please, download and enable <a href="https://github.com/OutlawPlz/svg_icon" target="_blank">SVG Icon</a> module to use icons in the nabvar button.'),
-    '#options' => SvgIcon::getConfigList(),
+    '#options' => SvgSprite::getConfigList(),
     '#empty_value' => '',
-    '#default_value' => $svg_icon_enabled ? theme_get_setting('navbar_button_svg_sprite') : FALSE,
-    '#disabled' => $svg_icon_enabled ? FALSE : TRUE,
+    '#default_value' => $svg_sprite_enabled ? theme_get_setting('navbar_button_svg_sprite') : FALSE,
+    '#disabled' => $svg_sprite_enabled ? FALSE : TRUE,
     '#states' => array(
       'disabled' => array(
         ':input[name="enable_adaptive_navbar"]' => array('checked' => FALSE)
@@ -144,7 +144,7 @@ function zero_form_system_theme_settings_alter(array &$form, FormStateInterface 
   );
 
   // If SVG Icon module is disabled, return.
-  if (!$svg_icon_enabled) {
+  if (!$svg_sprite_enabled) {
     return;
   }
 
@@ -207,10 +207,20 @@ function zero_form_submit(array $form, FormStateInterface $form_state) {
 
   $fs = new Filesystem();
   $finder = new Finder();
-  /** @var \Drupal\Core\Extension\ThemeHandler $themeHandler */
+
+  /** @var \Drupal\Core\Extension\ThemeHandlerInterface $themeHandler */
   $themeHandler = \Drupal::service('theme_handler');
-  /** @var Drupal\Core\Extension\Extension $starterkit */
-  $starterkit = $themeHandler->getTheme('zero_starterkit');
+
+  try {
+    $themeHandler->getTheme('zero_starterkit');
+  }
+  catch (InvalidArgumentException $exception) {
+    \Drupal::service('theme_installer')->install(['zero_starterkit']);
+  }
+  finally {
+    /** @var Drupal\Core\Extension\Extension $starterkit */
+    $starterkit = $themeHandler->getTheme('zero_starterkit');
+  }
 
   $subThemeGenerator = new SubThemeGenerator($fs, $finder);
   $subThemeGenerator->generateSubTheme($starterkit, $subTheme);

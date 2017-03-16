@@ -7,6 +7,8 @@ All notable changes to this project will be documented in this file.
 - Fixed delete svg sprite when in use by the theme. Added states to theme 
 settings form.
 
+- Refactor SVG Icon to SVG Sprite. Fixed zero_starterkit not found.
+
 ## v0.1.1
 
 - Fixed navbar position when there is no toolbar. Fixed node preview bar.
