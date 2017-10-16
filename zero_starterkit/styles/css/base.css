@@ -74,7 +74,7 @@ button:hover, button:focus {
   background-color: #e5e5e5;
 }
 
-select, input[type="number"], input[type="search"], input[type="password"], input[type="text"], textarea {
+select, input[type="number"], input[type="search"], input[type="password"], input[type="text"], input[type="email"], textarea {
   display: block;
   box-sizing: border-box;
   border: 1px solid #ccc;
@@ -85,7 +85,7 @@ select, input[type="number"], input[type="search"], input[type="password"], inpu
   background-color: #fff;
 }
 
-input[type="number"], input[type="search"], input[type="password"], input[type="text"] {
+input[type="number"], input[type="search"], input[type="password"], input[type="text"], input[type="email"] {
   max-width: 400px;
 }
 

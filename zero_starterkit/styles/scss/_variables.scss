@@ -59,8 +59,8 @@ $main-gutter: 7px; // Use $main-gutter or add-gutter-style('split') in Singulari
 // need to add space on top use the wrapper selector, padding-top.
 $row-space: 1em;
 $navbar-height: 4em; // Use this on line-height of navbar links.
-$toolbar-height: 39px;
-$toolbar-tray-height: 79px;
+$toolbar-height: 2.625em; // * 16px = 42px
+$toolbar-tray-height: 2.625em; // * 16px = 42px
 
 
 // Custom

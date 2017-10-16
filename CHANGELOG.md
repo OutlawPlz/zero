@@ -2,39 +2,90 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+Log of unreleased changes.
+
+### Added
+
+- Added CSS for `input[type="email"]`.
+
+### Changed
+
+- Improved `CHANGELOG.md` based on Keepachangelog.com site.
+- Generates sub-theme in `themes/custom/` folder instead of `themes/` folder.
+- Toolbar height defined in em.
+
+### Fixed
+
+- Fixed `SvgSprite` not found when module is disabled.
+
 ## v0.1.2
 
-- Fixed delete svg sprite when in use by the theme. Added states to theme 
-settings form.
+Released on **2017/03/16**.
 
-- Refactor SVG Icon to SVG Sprite. Fixed zero_starterkit not found.
+### Added
+
+- Added states to theme settings form.
+
+### Changed
+
+- Refactor SVG Icon to SVG Sprite.
+
+### Fixed
+
+- Fixed delete svg sprite when in use by the theme.
+- Fixed zero_starterkit not found.
 
 ## v0.1.1
 
-- Fixed navbar position when there is no toolbar. Fixed node preview bar.
+*Released on 2017/03/06.*
 
-- Pager styling. Field tags styling. Node submitted styling. Change gulpfile.js 
-sass function.
+### Added
 
-- Starterkit.breakpoints.yml file, generateBreakpointsYml(). Improved sub-theme
-generator. Refactor starterkit to zero_starterkit. Added settings.yml to
-zero_starterkit. Added generatePackageJson() function.
+- Pager styling.
+- Field tags styling.
+- Node submitted styling.
+- Added `Starterkit.breakpoints.yml` file, `generateBreakpointsYml()`.
+- Added `settings.yml` to `zero_starterkit`.
+- Added `generatePackageJson()` function.
+- Added `state.css`.
+- Added `ckeditor.scss` to `layout/` folder.
 
-- Improved Droppy integration. Improved SVG Icon integration.
+### Changed
 
-- Added state.css, fix typo. Added ckeditor.scss to layout/ folder.
+- Change gulpfile.js sass function.
+- Improved sub-theme generator.
+- Refactor starterkit to zero_starterkit.
+- Improved Droppy integration.
+- Improved SVG Icon integration.
+
+### Fixed
+
+- Fixed navbar position when there is no toolbar.
+- Fixed node preview bar.
 
 ## v0.1.0
 
-- Fixed input password positioning. Added modules check. Manage menu toggle
-button in settings. Added screenshot.png.
+Released on **2017/01/26**.
 
-- Fixed components CSS declaration in libraries.yml. Removed hide_site_name
-option and relative template.
+### Added
 
-- Removed Font Awesome. Use SVG icon. Fixed navbar, top 0. Fixed gulpfile.js
-watch style. Font-size 18px.
+- Added modules check.
+- Manage menu toggle button in settings.
+- Added `screenshot.png`.
 
-- Added type drupal-theme to composer.json.
+### Changed
 
+- Added type `drupal-theme` to `composer.json` file.
+
+### Fixed
+
+- Fixed input password positioning.  
+- Fixed components CSS declaration in `libraries.yml`.
 - Fixed overlapping of toolbar and navbar.
+
+### Removed
+
+- Removed `hide_site_name` option and relative template.
+- Removed Font Awesome.

@@ -218,7 +218,7 @@
 
 @media (min-width: 0) and (max-width: 560px) {
   .toolbar-vertical .region-navbar {
-    top: 39px;
+    top: 2.625em;
   }
 }
 

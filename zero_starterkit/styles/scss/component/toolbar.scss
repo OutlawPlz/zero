@@ -5,20 +5,16 @@
 // -----------------------------------------------------------------------------
 
 #toolbar-administration {
+  font-size: .875em; // Use em to simplify height management.
   position: fixed; // Fixed. Always.
   top: 0;
   width: 100%;
   z-index: 2; // Overlay fixed-navbar.
 }
 
-body.toolbar-fixed {
+body.toolbar-fixed.toolbar-tray-open {
 
-  &.toolbar-tray-open {
-
-    &.toolbar-vertical {
-
-      // Do not slide content.
-      margin-left: 0;
-    }
+  &.toolbar-vertical {
+    margin-left: 0; // Do not slide content.
   }
 }

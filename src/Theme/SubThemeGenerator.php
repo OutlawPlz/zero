@@ -1,11 +1,11 @@
 <?php
-
 /**
  * @file
  * Contains \Drupal\zero\Theme\SubThemeGenerator
  */
 
 namespace Drupal\zero\Theme;
+
 
 use Drupal\Core\Extension\Extension;
 use Symfony\Component\Filesystem\Exception\IOException;
@@ -81,7 +81,8 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
    */
   public function copyStarterkit(Extension $starterkit, array $subTheme) {
 
-    $this->fs->mirror($starterkit->getPath(), 'themes/' . $subTheme['machine_name']);
+    $sub_theme_path = $this->getSubThemePath($subTheme['machine_name']);
+    $this->fs->mirror($starterkit->getPath(), $sub_theme_path);
   }
 
   /**
@@ -95,8 +96,10 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
    */
   public function generateInfoYml(Extension $starterkit, array $subTheme) {
 
-    $starterkitInfoPath = 'themes/' . $subTheme['machine_name'] . '/' . $starterkit->getFilename();
-    $subThemeInfoPath = 'themes/' . $subTheme['machine_name'] . '/' . $subTheme['machine_name'] . '.info.yml';
+    $sub_theme_path = $this->getSubThemePath($subTheme['machine_name']);
+
+    $starterkitInfoPath = $sub_theme_path . '/' . $starterkit->getFilename();
+    $subThemeInfoPath = $sub_theme_path . '/' . $subTheme['machine_name'] . '.info.yml';
 
     $subThemeInfo = Yaml::parse(file_get_contents($starterkitInfoPath));
 
@@ -139,8 +142,10 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
    */
   public function generateLibrariesYml(Extension $starterkit, array $subTheme) {
 
-    $starterkitLibrariesPath = 'themes/' . $subTheme['machine_name'] . '/' . $starterkit->getName() . '.libraries.yml';
-    $subThemeLibrariesPath = 'themes/' . $subTheme['machine_name'] . '/' . $subTheme['machine_name'] . '.libraries.yml';
+    $sub_theme_path = $this->getSubThemePath($subTheme['machine_name']);
+
+    $starterkitLibrariesPath = $sub_theme_path . '/' . $starterkit->getName() . '.libraries.yml';
+    $subThemeLibrariesPath = $sub_theme_path . '/' . $subTheme['machine_name'] . '.libraries.yml';
 
     $this->fs->rename($starterkitLibrariesPath, $subThemeLibrariesPath);
   }
@@ -155,7 +160,9 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
    */
   public function generateConfigYml(Extension $starterkit, array $subTheme) {
 
-    $starterkitConfigPath = 'themes/' . $subTheme['machine_name'] . '/config';
+    $sub_theme_path = $this->getSubThemePath($subTheme['machine_name']);
+
+    $starterkitConfigPath = $sub_theme_path . '/config';
     $configYmlFiles = $this->finder->files()->in($starterkitConfigPath);
 
     /** @var SplFileInfo $configYmlFile */
@@ -190,8 +197,10 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
    */
   public function generateBreakpointsYml(Extension $starterkit, array $subTheme) {
 
-    $starterkitBreakpointsPath = 'themes/' . $subTheme['machine_name'] . '/' . $starterkit->getName() . '.breakpoints.yml';
-    $subThemeBreakpointsPath = 'themes/' . $subTheme['machine_name'] . '/' . $subTheme['machine_name'] . '.breakpoints.yml';
+    $sub_theme_path = $this->getSubThemePath($subTheme['machine_name']);
+
+    $starterkitBreakpointsPath = $sub_theme_path . '/' . $starterkit->getName() . '.breakpoints.yml';
+    $subThemeBreakpointsPath = $sub_theme_path . '/' . $subTheme['machine_name'] . '.breakpoints.yml';
 
     $fileContent = str_replace(
       $starterkit->getName(),
@@ -218,7 +227,9 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
       return;
     }
 
-    $packageJsonPath = 'themes/' . $subTheme['machine_name'] . '/package.json';
+    $sub_theme_path = $this->getSubThemePath($subTheme['machine_name']);
+
+    $packageJsonPath = $sub_theme_path . '/package.json';
     $packageJson = json_decode(file_get_contents($packageJsonPath), TRUE);
 
     $packageJson['name'] = $subTheme['machine_name'];
@@ -231,17 +242,33 @@ class SubThemeGenerator implements SubThemeGeneratorInterface {
   }
 
   /**
+   * @param string $id
+   *   Sub-theme machine-readable name.
+   *
+   * @return string
+   *   Path to the sub-theme.
+   */
+  public function getSubThemePath($id) {
+
+    if (!$this->fs->exists('themes/custom/')) {
+      $this->fs->mkdir('themes/custom/', 0754);
+    }
+
+    return 'themes/custom/' . $id;
+  }
+
+  /**
    * Takes a theme id and check if the theme exists or not.
    *
-   * @param string $themeId
+   * @param string $id
    *   The machine-readable name of the theme.
    *
    * @return bool
    *   True if theme exists, false otherwise.
    */
-  public static function themeExists($themeId) {
+  public static function themeExists($id) {
 
     $theme_list = \Drupal::service('theme_handler')->rebuildThemeData();
-    return array_key_exists($themeId, $theme_list);
+    return array_key_exists($id, $theme_list);
   }
 }

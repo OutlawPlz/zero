@@ -132,7 +132,7 @@ function zero_form_system_theme_settings_alter(array &$form, FormStateInterface 
     '#type' => 'select',
     '#title' => t('SVG Sprite'),
     '#description' => t('Please, download and enable <a href="https://github.com/OutlawPlz/svg_icon" target="_blank">SVG Icon</a> module to use icons in the nabvar button.'),
-    '#options' => SvgSprite::getConfigList(),
+    '#options' => $svg_sprite_enabled ? SvgSprite::getConfigList() : array(),
     '#empty_value' => '',
     '#default_value' => $svg_sprite_enabled ? theme_get_setting('navbar_button_svg_sprite') : FALSE,
     '#disabled' => $svg_sprite_enabled ? FALSE : TRUE,

@@ -317,6 +317,7 @@ ul.primary a.is-active {
 }
 
 #toolbar-administration {
+  font-size: .875em;
   position: fixed;
   top: 0;
   width: 100%;
