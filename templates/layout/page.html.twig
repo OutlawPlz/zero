@@ -120,7 +120,7 @@
       </div>
     </div>
   {% endif %}
-  <div class="row row-main">
+  <div{{ row.main.attributes.addClass('row', 'row-main') }}>
     <div{{ container.attributes }}>
       {{ page.content }}
       {% if page.sidebar_first %}

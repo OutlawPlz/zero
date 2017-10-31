@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+Log of unreleased changes.
+
+### Fixed
+
+- [#4][44fe4b58] - Fixed regions attributes are not printed.
+
+  [44fe4b58]: https://github.com/OutlawPlz/zero/issues/4 "Regions attributes are not printed"
+
 ## v0.1.3
 
 Released on **2017/10/16**.

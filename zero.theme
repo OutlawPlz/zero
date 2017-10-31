@@ -35,14 +35,14 @@ function zero_preprocess_html(&$variables) {
 function zero_preprocess_page(&$variables) {
 
   $regions = array(
-    'main',
+    'content',
     'sidebar_first',
     'sidebar_second'
   );
 
   $variables['row']['main']['attributes'] = new Attribute(
     array(
-      'class' => active_regions_css_class($regions)
+      'class' => active_regions_css_class($regions, $variables)
     )
   );
 
@@ -101,15 +101,17 @@ function zero_preprocess_page(&$variables) {
  * Gets an array of region keys, check if those regions are active and returns
  * an array of CSS class that lists which regions are active.
  *
- * E.g. in the .row-main there are main, sidebar_first and sidebar_second
+ * E.g. in the .row-main there are content, sidebar_first and sidebar_second
  * regions. If all regions are active the function will return
  * .has-regions--1-2-3 and .active-regions--3. If only main and sidebar_second
  * are active the function will return .has-regions--1-3 and .active-regions--2.
  *
  * @param array $regions
+ * @param $variables
+ *
  * @return array
  */
-function active_regions_css_class($regions) {
+function active_regions_css_class($regions, $variables) {
 
   $has_regions = 'has-regions-';
   $has_regions_counter = 0;
