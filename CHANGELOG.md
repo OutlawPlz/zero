@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file.
 
 Log of unreleased changes.
 
+### Added
+
+- [#5][f28f5b11] - Added default style for sidebars.
+
+  [f28f5b11]: https://github.com/OutlawPlz/zero/issues/5 "Sidebars default style"
+
 ### Fixed
 
 - [#4][44fe4b58] - Fixed regions attributes are not printed.
