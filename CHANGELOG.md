@@ -11,6 +11,10 @@ Log of unreleased changes.
 - [#5][f28f5b11] - Added default style for sidebars.
 
   [f28f5b11]: https://github.com/OutlawPlz/zero/issues/5 "Sidebars default style"
+  
+### Changed
+
+- Updated dependencies `symfony/filesystem ~3.2` and `symfony/finder ~3.2`.
 
 ### Fixed
 

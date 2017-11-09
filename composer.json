@@ -11,7 +11,7 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "symfony/filesystem": "~2.8",
-    "symfony/finder": "~2.8"
+    "symfony/filesystem": "~3.2",
+    "symfony/finder": "~3.2"
   }
 }
